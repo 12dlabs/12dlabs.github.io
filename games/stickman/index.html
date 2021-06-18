@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="main.css">
+    <script src="stickman.js"></script>
+    <script src="resource.js"></script>
+    <script src="demo.js"></script>
+
+</head>
+<body>
+
+<canvas id="canvas_logo" width="120px" height="120px" class=" canvas_logo_start canvas_logo_show">抱歉，你的浏览器不支持canvas，建议你使用Chrome浏览器，杜绝360浏览器。</canvas>
+<section id="section-demo" class="section-demo">
+    <div id="demo">
+        <canvas id="canvas" width="800px" height="550px">抱歉，你的浏览器不支持canvas，建议你使用Chrome浏览器，杜绝360浏览器。</canvas>
+        <img src="texture.png" id="xiaoxiaoImg" style="display:none;">
+
+        <div class="wording">
+            <div id="step1" class="step">
+            </div>
+
+            <div id="step2" class="step">
+            </div>
+
+            <div id="step3" class="step">
+            </div>
+
+            <div id="step4" class="step">
+            </div>
+
+            <div id="step5" class="step">
+
+            </div>
+
+            <div id="step6" class="last_step">
+
+            </div>
+        </div>
+
+        <div class="combos">
+            <div id="combo1">
+            </div>
+
+            <div id="combo2">
+            </div>
+
+            <div id="combo3">
+            </div>
+
+            <div id="combo4">
+            </div>
+
+            <div id="combo5">
+            </div>
+        </div>
+
+        <div id="toggleBtn" class="toggle">
+            <label id="toggle_on" class="toggle-radio" for="toggleOption4">ON</label>
+            <input type="radio" name="toggleOptions2" id="toggleOption3" value="option3">
+            <label id="toggle_off" class="toggle-radio" for="toggleOption3">OFF</label>
+            <input type="radio" name="toggleOptions2" id="toggleOption4" value="option4" checked="checked">
+        </div>
+
+    </div>
+
+    <div class="demo-operation">
+
+        <div class="keyboard">
+            <h2>Operation</h2>
+            <div class="key">J:前拳</div>
+            <div class="key">K:中拳</div>
+            <div class="key">L:踢</div>
+            <div class="key">R:跑步</div>
+            <div class="key">P:滚地板</div>
+            <div class="key">O:捡肥皂</div>
+            <div class="key">N:放松</div>
+            <div class="key">M:来吧！少年！</div>
+        </div>
+
+        <div class="sys_combos">
+            <h2>Combos</h2>
+            <div class="sys_combo">
+						<span class="name">
+							<i class="icon-legal"></i>古龙式拳法<i class="icon-right-triangle"></i></span>
+                <span class="combo">J+J+K + J+J+K + J+J+K...</span>
+            </div>
+            <div class="sys_combo">
+						<span class="name">
+							<i class="icon-legal"></i>翻滚侧踢<i class="icon-right-triangle"></i></span>
+                <span class="combo">R+P+L</span>
+            </div>
+
+            <div class="sys_combo">
+						<span class="name">
+							<i class="icon-legal"></i>我不断的翻滚，油腻的师姐在那里<i class="icon-right-triangle"></i></span>
+                <span class="combo">P+N + P+N ...</span>
+            </div>
+
+            <div class="sys_combo">
+						<span class="name">
+							<i class="icon-legal"></i>捡肥皂发现身后有杀机<i class="icon-right-triangle"></i></span>
+                <span class="combo">O+P+M</span>
+            </div>
+
+        </div>
+    </div>
+
+</section>
+
+<script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-23019343-9']);
+    _gaq.push(['_trackPageview']);
+
+
+</script>
+
+</body>
+</html>

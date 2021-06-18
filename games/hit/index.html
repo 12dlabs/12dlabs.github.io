@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html class="ali-page ali-app-hub-home-site">
+<head>
+    <meta charset="utf-8" />
+    <title>Critical Hit - 12D Labs - Alibaba</title>
+    <script src="https://g.alicdn.com/hi/modulex/5.0.0/seed.js" type="text/javascript"></script>
+    <script src="https://g.alicdn.com/tb/tracker/1.0.16/index.js" type="text/javascript"></script>
+    <script src="https://g.alicdn.com/hi/quark/1.7.899/index.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../../inc/scripts/config.js" type="text/javascript" charset="utf-8"></script>
+    <style type="text/css">
+        html, body {
+            overflow-x: hidden;
+        }
+        #ali_app_labs_demo_hit_zone {
+            width: 100%;
+            height: 320px;
+            padding: 20px;
+            margin: 0;
+            border: 2px dashed #CCC;
+            border-radius: 4px;
+            -moz-box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            cursor: default;
+        }
+
+        #ali_app_labs_demo_hit_zone > p:first-child {
+            color: #CCC;
+            font-weight: lighter;
+            font-size: 64px;
+            line-height: 100px;
+            padding: 40px;
+            margin: 0;
+            cursor: default;
+        }
+
+        @keyframes ali-nine-popup-balloon-hit-in {
+            from {
+                font-size: 12px;
+            }
+            to {
+                font-size: 32px;
+            }
+        }
+        @-webkit-keyframes ali-nine-popup-balloon-hit-in {
+            from {
+                font-size: 12px;
+            }
+            to {
+                font-size: 32px;
+            }
+        }
+        .ali-app-labs-demo-hit-popup-balloon-hit {
+            color: yellow;
+            font-size: 32px;
+            font-weight: bold;
+            text-shadow: 1px 1px 3px rgba(64, 64, 64, 0.6);
+            width: 20px;
+            height: 20px;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            z-index: 100000;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            -webkit-animation: ali-nine-popup-balloon-hit-in 0.1s;
+            animation: ali-nine-popup-balloon-hit-in 0.1s;
+        }
+        #ali_app_labs_demo_hit_code > div > code {
+            background-color: white;
+            padding: 20px;
+            margin: 0;
+            display: block;
+        }
+        #ali_app_labs_demo_hit_code > div > code .ali-x-code-comment {
+            color: green;
+        }
+        #ali_app_labs_demo_hit_code > div > code .ali-x-code-string {
+            color: indianred;
+        }
+        #ali_app_labs_demo_hit_code > div > code .ali-x-code-keyword {
+            color: royalblue;
+        }
+        #ali_app_labs_demo_hit_code > div > code .ali-x-code-number,
+        #ali_app_labs_demo_hit_code > div > code .ali-x-code-enum {
+            color: lightseagreen;
+        }
+    </style>
+</head>
+<body class="ali-page-l-show ali-app-labs">
+    <div id="ali_app_labs_demo_hit">
+        <div id="ali_app_labs_demo_hit_zone">
+            <p>Click Here!</p>
+        </div>
+        <div id="ali_app_labs_demo_hit_code">
+            <p>
+                <span>Do you want to add this to your site? You can import Quark and insert following JavaScript code.</span>
+            </p>
+            <div>
+                <code>
+                    <span class="ali-x-code-keyword">var</span> qEle = AliHub.Elements;<br /><br />
+                    <span class="ali-x-code-comment">// Bind a click event handler to an element. Suppose there is a DOM &lt;div id=&quot;idOrElementOfTheDomToBind&quot;&gt;&lt;/div&gt; in the page.</span><br />
+                    <span class="ali-x-code-comment">// See AliHub.Elements.onClick(element, options) function for details.</span><br />
+                    qEle.onClick(<span class="ali-x-code-string">&quot;idOrElementOfTheDomToBind&quot;</span>, {<br />
+                    &nbsp; &nbsp; start: <span class="ali-x-code-number">3</span>, <span class="ali-x-code-comment">// The count clicked to occur specific handler at least.</span><br />
+                    &nbsp; &nbsp; count: <span class="ali-x-code-number">100</span>, <span class="ali-x-code-comment">// The count to allow occur at most.</span><br />
+                    &nbsp; &nbsp; span: <span class="ali-x-code-number">400</span>, <span class="ali-x-code-comment">// The time span in millisecond between two clicks at most.</span><br />
+                    &nbsp; &nbsp; process: <span class="ali-x-code-keyword">function</span> (event, count, options) { <span class="ali-x-code-comment">// A handler to occur.</span><br />
+                    &nbsp; &nbsp; &nbsp; &nbsp; <span class="ali-x-code-comment">// event is the MouseEvent.</span><br />
+                    &nbsp; &nbsp; &nbsp; &nbsp; <span class="ali-x-code-comment">// count is the count clicked currently now.</span><br />
+                    &nbsp; &nbsp; &nbsp; &nbsp; <span class="ali-x-code-comment">// options is the object of this.</span><br /><br />
+                    &nbsp; &nbsp; &nbsp; &nbsp; <span class="ali-x-code-comment">// This is an example to popup something.</span><br />
+                    &nbsp; &nbsp; &nbsp; &nbsp; qEle.popup({<br />
+                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; orientation: qEle.PeripheralOrientations.<span class="ali-x-code-number">Bottom</span>, // <span class="ali-x-code-comment">The position: Top = 1, Right = 2, Bottom = 3, Left = 4.</span><br />
+                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; render: <span class="ali-x-code-keyword">function</span> (info) {<br />
+                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="ali-x-code-keyword">var</span> container = info.container().innerHTML((count + 1).toString());<br />
+                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }<br />
+                    &nbsp; &nbsp; &nbsp; &nbsp; });<br />
+                    &nbsp; &nbsp; }<br />
+                    });
+                </code>
+            </div>
+            <p>
+                <span>But wait, if I want to listen something that is not about clicking nor element binding. What should I do?</span>
+                <span>Ah, the good news is that we have a powerful utility for it!</span>
+                <span>You can code following stuffs to create a full customized continuity task with counting and configuration.</span>
+            </p>
+            <div>
+                <code>
+                    <span class="ali-x-code-keyword">var</span> qCore = AliHub.Common;<br /><br />
+                    <span class="ali-x-code-comment">// Creates a function that can handler the task configured by you for continuity task.</span><br />
+                    <span class="ali-x-code-comment">// See AliHub.Common.getContinuityTask(options) function for details.</span><br />
+                    <span class="ali-x-code-keyword">var</span> hitProc = qCore.getContinuityTask({<br />
+                    &nbsp; &nbsp; start: <span class="ali-x-code-number">3</span>, <span class="ali-x-code-comment">// The count clicked to occur specific handler at least.</span><br />
+                    &nbsp; &nbsp; count: <span class="ali-x-code-number">100</span>, <span class="ali-x-code-comment">// The count to allow occur at most.</span><br />
+                    &nbsp; &nbsp; span: <span class="ali-x-code-number">400</span>, <span class="ali-x-code-comment">// The time span in millisecond between two clicks at most.</span><br />
+                    &nbsp; &nbsp; process: <span class="ali-x-code-keyword">function</span> (count, options) { <span class="ali-x-code-comment">// A handler to occur.</span><br />
+                    &nbsp; &nbsp; &nbsp; &nbsp; <span class="ali-x-code-comment">// count is the count clicked currently now.</span><br />
+                    &nbsp; &nbsp; &nbsp; &nbsp; <span class="ali-x-code-comment">// options is the object of this.</span><br />
+                    &nbsp; &nbsp; }<br />
+                    });<br /><br />
+                    <span class="ali-x-code-comment">// It will return a function so that you can call it anywhere you want to process, such as clicking.</span><br />
+                    $(<span class="ali-x-code-string">&quot;#idOrElementOfTheDomToBind&quot;</span>).on(<span class="ali-x-code-string">&quot;click&quot;</span>, function ()<br />
+                    &nbsp; &nbsp; hitProc();<br />
+                    });
+                </code>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        <!--
+        modulex.use('local/scripts/pages', function (pages) {
+            var qEle = AliHub.Elements;
+            qEle.onClick("ali_app_labs_demo_hit_zone", {
+                start: 3,
+                process: function (event, count, options) {
+                    qEle.popup({
+                        orientation: qEle.PeripheralOrientations.Bottom,
+                        render: function (info) {
+                            var container = info.container().innerHTML("<div class=\"ali-app-labs-demo-hit-popup-balloon-hit\">" + (count + 1).toString() + "!</div>");
+                        },
+                        timeout: 400
+                    });
+                },
+                span: 600
+            });
+        });
+        //-->
+    </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Minesweeper</title>
+    <script src="index.js" type="text/javascript" charset="utf-8"></script>
+    <link href="common.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="demo_container">
+        <div id="demo_container_action" class="ali-container-actions">
+            <span id="demo_container_action_new" class="ali-button-action">New Game</span>
+        </div>
+        <div id="demo_container_minesweeper"></div>
+    </div>
+    <script type="text/javascript">
+        <!--
+        (function () {
+            var minesweeper = new Minesweeper("demo_container_minesweeper");
+            var newGame = function () {
+                minesweeper.start({
+                    count: 10,
+                    x: 9,
+                    y: 9
+                });
+            };
+            newGame();
+            document.getElementById("demo_container_action_new").onclick = function (ev) {
+                newGame();
+            };
+        })();
+        //-->
+    </script>
+</body>
+</html>
