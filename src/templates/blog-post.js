@@ -1,24 +1,24 @@
-import React from 'react';
-import { Link, graphql } from 'gatsby';
-import get from 'lodash/get';
+import React from "react";
+import { Link, graphql } from "gatsby";
+import get from "lodash/get";
 
-import '../fonts/fonts-post.css';
-import Bio from '../components/Bio';
-import Layout from '../components/Layout';
-import SEO from '../components/SEO';
-import Signup from '../components/Signup';
-import Panel from '../components/Panel';
-import { formatPostDate, formatReadingTime } from '../utils/helpers';
-import { rhythm, scale } from '../utils/typography';
+import "../fonts/fonts-post.css";
+import Bio from "../components/Bio";
+import Layout from "../components/Layout";
+import SEO from "../components/SEO";
+import Signup from "../components/Signup";
+import Panel from "../components/Panel";
+import { formatPostDate, formatReadingTime } from "../utils/helpers";
+import { rhythm, scale } from "../utils/typography";
 import {
   codeToLanguage,
   createLanguageLink,
   loadFontsForCode,
-  replaceAnchorLinksByLanguage,
-} from '../utils/i18n';
+  replaceAnchorLinksByLanguage
+} from "../utils/i18n";
 
-const GITHUB_USERNAME = 'gaearon';
-const GITHUB_REPO_NAME = 'overreacted.io';
+const GITHUB_USERNAME = "12dlabs";
+const GITHUB_REPO_NAME = "12dlabs.github.io";
 const systemFont = `system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
     "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
     "Droid Sans", "Helvetica Neue", sans-serif`;
@@ -27,62 +27,32 @@ class Translations extends React.Component {
   render() {
     let { translations, lang, languageLink, editUrl } = this.props;
 
-    let readerTranslations = translations.filter(lang => lang !== 'ru');
-    let hasRussianTranslation = translations.indexOf('ru') !== -1;
+    let readerTranslations = translations.filter(lang => lang !== "ru");
 
     return (
       <div className="translations">
         <Panel style={{ fontFamily: systemFont }}>
           {translations.length > 0 && (
             <span>
-              {hasRussianTranslation && (
-                <span>
-                  Originally written in:{' '}
-                  {'en' === lang ? (
-                    <b>{codeToLanguage('en')}</b>
-                  ) : (
-                    <Link to={languageLink('en')}>English</Link>
-                  )}
-                  {' • '}
-                  {'ru' === lang ? (
-                    <b>Русский (авторский перевод)</b>
-                  ) : (
-                    <Link to={languageLink('ru')}>
-                      Русский (авторский перевод)
-                    </Link>
-                  )}
-                  <br />
-                  <br />
-                </span>
-              )}
-              <span>Translated by readers into: </span>
               {readerTranslations.map((l, i) => (
                 <React.Fragment key={l}>
                   {l === lang ? (
                     <b>{codeToLanguage(l)}</b>
                   ) : (
-                    <Link to={languageLink(l)}>{codeToLanguage(l)}</Link>
+                    <Link to={languageLink(l)}>
+                      {codeToLanguage(l)} version
+                    </Link>
                   )}
-                  {i === readerTranslations.length - 1 ? '' : ' • '}
+                  {i === readerTranslations.length - 1 ? "" : " • "}
                 </React.Fragment>
               ))}
             </span>
           )}
-          {lang !== 'en' && (
+          {lang !== "zh-hans" && (
             <>
               <br />
               <br />
-              {lang !== 'ru' && (
-                <>
-                  <Link to={languageLink('en')}>Read the original</Link>
-                  {' • '}
-                  <a href={editUrl} target="_blank" rel="noopener noreferrer">
-                    Improve this translation
-                  </a>
-                  {' • '}
-                </>
-              )}
-              <Link to={`/${lang}`}>View all translated posts</Link>{' '}
+              <Link to={`/${lang}`}>View all translated posts</Link>{" "}
             </>
           )}
         </Panel>
@@ -94,13 +64,13 @@ class Translations extends React.Component {
 class BlogPostTemplate extends React.Component {
   render() {
     const post = this.props.data.markdownRemark;
-    const siteTitle = get(this.props, 'data.site.siteMetadata.title');
+    const siteTitle = get(this.props, "data.site.siteMetadata.title");
     let {
       previous,
       next,
       slug,
       translations,
-      translatedLinks,
+      translatedLinks
     } = this.props.pageContext;
     const lang = post.fields.langKey;
 
@@ -114,11 +84,11 @@ class BlogPostTemplate extends React.Component {
     translatedLinks.forEach(link => {
       // jeez
       function escapeRegExp(str) {
-        return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        return str.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
       }
-      let translatedLink = '/' + lang + link;
+      let translatedLink = "/" + lang + link;
       html = html.replace(
-        new RegExp('"' + escapeRegExp(link) + '"', 'g'),
+        new RegExp('"' + escapeRegExp(link) + '"', "g"),
         '"' + translatedLink + '"'
       );
     });
@@ -131,11 +101,11 @@ class BlogPostTemplate extends React.Component {
     loadFontsForCode(lang);
     // TODO: this curried function is annoying
     const languageLink = createLanguageLink(slug, lang);
-    const enSlug = languageLink('en');
+    const enSlug = languageLink("en");
     const editUrl = `https://github.com/${GITHUB_USERNAME}/${GITHUB_REPO_NAME}/edit/master/src/pages/${enSlug.slice(
       1,
       enSlug.length - 1
-    )}/index${lang === 'en' ? '' : '.' + lang}.md`;
+    )}/index${lang === "zh-hans" ? "" : "." + lang}.md`;
     const discussUrl = `https://mobile.twitter.com/search?q=${encodeURIComponent(
       `https://overreacted.io${enSlug}`
     )}`;
@@ -151,15 +121,15 @@ class BlogPostTemplate extends React.Component {
         <main>
           <article>
             <header>
-              <h1 style={{ color: 'var(--textTitle)' }}>
+              <h1 style={{ color: "var(--textTitle)" }}>
                 {post.frontmatter.title}
               </h1>
               <p
                 style={{
                   ...scale(-1 / 5),
-                  display: 'block',
+                  display: "block",
                   marginBottom: rhythm(1),
-                  marginTop: rhythm(-4 / 5),
+                  marginTop: rhythm(-4 / 5)
                 }}
               >
                 {formatPostDate(post.frontmatter.date, lang)}
@@ -177,10 +147,6 @@ class BlogPostTemplate extends React.Component {
             <div dangerouslySetInnerHTML={{ __html: html }} />
             <footer>
               <p>
-                <a href={discussUrl} target="_blank" rel="noopener noreferrer">
-                  Discuss on Twitter
-                </a>
-                {` • `}
                 <a href={editUrl} target="_blank" rel="noopener noreferrer">
                   Edit on GitHub
                 </a>
@@ -191,38 +157,38 @@ class BlogPostTemplate extends React.Component {
         <aside>
           <div
             style={{
-              margin: '90px 0 40px 0',
-              fontFamily: systemFont,
+              margin: "90px 0 40px 0",
+              fontFamily: systemFont
             }}
           >
-            <Signup cta={post.frontmatter.cta} />
+            {/* <Signup cta={post.frontmatter.cta} /> */}
           </div>
           <h3
             style={{
-              fontFamily: 'Montserrat, sans-serif',
-              marginTop: rhythm(0.25),
+              fontFamily: "Montserrat, sans-serif",
+              marginTop: rhythm(0.25)
             }}
           >
             <Link
               style={{
-                boxShadow: 'none',
-                textDecoration: 'none',
-                color: 'var(--pink)',
+                boxShadow: "none",
+                textDecoration: "none",
+                color: "var(--pink)"
               }}
-              to={'/'}
+              to={"/"}
             >
-              Overreacted
+              12DLabs
             </Link>
           </h3>
           <Bio />
           <nav>
             <ul
               style={{
-                display: 'flex',
-                flexWrap: 'wrap',
-                justifyContent: 'space-between',
-                listStyle: 'none',
-                padding: 0,
+                display: "flex",
+                flexWrap: "wrap",
+                justifyContent: "space-between",
+                listStyle: "none",
+                padding: 0
               }}
             >
               <li>

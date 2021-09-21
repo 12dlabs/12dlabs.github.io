@@ -1,21 +1,18 @@
 module.exports = {
   siteMetadata: {
-    title: 'Overreacted',
-    author: 'Dan Abramov',
-    description: 'Personal blog by Dan Abramov. I explain with words and code.',
-    siteUrl: 'https://overreacted.io',
-    social: {
-      twitter: '@dan_abramov',
-    },
+    title: "12DLabs",
+    author: "12DLabs",
+    description: "Blog of 12DLabs.",
+    siteUrl: "https://overreacted.io"
   },
-  pathPrefix: '/',
+  pathPrefix: "/",
   plugins: [
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/src/pages`,
-        name: 'pages',
-      },
+        name: "pages"
+      }
     },
     {
       resolve: `gatsby-transformer-remark`,
@@ -24,40 +21,40 @@ module.exports = {
           {
             resolve: `gatsby-remark-images`,
             options: {
-              maxWidth: 590,
-            },
+              maxWidth: 590
+            }
           },
           {
             resolve: `gatsby-remark-responsive-iframe`,
             options: {
-              wrapperStyle: `margin-bottom: 1.0725rem`,
-            },
+              wrapperStyle: `margin-bottom: 1.0725rem`
+            }
           },
-          'gatsby-remark-autolink-headers',
+          "gatsby-remark-autolink-headers",
           {
-            resolve: 'gatsby-remark-prismjs',
+            resolve: "gatsby-remark-prismjs",
             options: {
-              inlineCodeMarker: '÷',
-            },
+              inlineCodeMarker: "÷"
+            }
           },
-          'gatsby-remark-copy-linked-files',
-          'gatsby-remark-smartypants',
+          "gatsby-remark-copy-linked-files",
+          "gatsby-remark-smartypants",
           {
-            resolve: 'gatsby-remark-external-links',
+            resolve: "gatsby-remark-external-links",
             options: {
-              target: '_blank',
-            },
-          },
-        ],
-      },
+              target: "_blank"
+            }
+          }
+        ]
+      }
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        trackingId: `UA-130227707-1`,
-      },
+        trackingId: `UA-130227707-1`
+      }
     },
     {
       resolve: `gatsby-plugin-feed`,
@@ -80,7 +77,7 @@ module.exports = {
               return allMarkdownRemark.edges.map(edge => {
                 const siteUrl = site.siteMetadata.siteUrl;
                 const postText = `
-                <div style="margin-top=55px; font-style: italic;">(This is an article posted to my blog at overreacted.io. You can read it online by <a href="${siteUrl +
+                <div style="margin-top=55px; font-style: italic;">(This is an article posted at 12DLabs. You can read it online by <a href="${siteUrl +
                   edge.node.fields.slug}">clicking here</a>.)</div>
               `;
 
@@ -97,7 +94,7 @@ module.exports = {
                   date: edge.node.frontmatter.date,
                   url: site.siteMetadata.siteUrl + edge.node.fields.slug,
                   guid: site.siteMetadata.siteUrl + edge.node.fields.slug,
-                  custom_elements: [{ 'content:encoded': html + postText }],
+                  custom_elements: [{ "content:encoded": html + postText }]
                 });
               });
             },
@@ -106,14 +103,14 @@ module.exports = {
                 allMarkdownRemark(
                   limit: 1000,
                   sort: { order: DESC, fields: [frontmatter___date] }
-                  filter: {fields: { langKey: {eq: "en"}}}
+                  filter: {fields: { langKey: {eq: "zh-hans"}}}
                 ) {
                   edges {
                     node {
                       excerpt(pruneLength: 250)
                       html
-                      fields { 
-                        slug   
+                      fields {
+                        slug
                       }
                       frontmatter {
                         title
@@ -125,16 +122,16 @@ module.exports = {
                 }
               }
             `,
-            output: '/rss.xml',
-            title: "Dan Abramov's Overreacted Blog RSS Feed",
-          },
-        ],
-      },
+            output: "/rss.xml",
+            title: "12DLabs's Blog RSS Feed"
+          }
+        ]
+      }
     },
     {
       resolve: `gatsby-plugin-ebook`,
       options: {
-        filename: 'overreacted-ebook.epub',
+        filename: "overreacted-ebook.epub",
         query: `
           {
             site {
@@ -159,36 +156,36 @@ module.exports = {
                 }
               }
             }
-          }`,
-      },
+          }`
+      }
     },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Overreacted`,
-        short_name: `Overreacted`,
+        name: `12DLabs`,
+        short_name: `12DLabs`,
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#ffa7c4`,
         display: `minimal-ui`,
         icon: `src/assets/icon.png`,
-        theme_color_in_head: false,
-      },
+        theme_color_in_head: false
+      }
     },
     `gatsby-plugin-react-helmet`,
     {
-      resolve: 'gatsby-plugin-typography',
+      resolve: "gatsby-plugin-typography",
       options: {
-        pathToConfigModule: 'src/utils/typography',
-      },
+        pathToConfigModule: "src/utils/typography"
+      }
     },
     {
-      resolve: 'gatsby-plugin-i18n',
+      resolve: "gatsby-plugin-i18n",
       options: {
-        langKeyDefault: 'en',
-        useLangKeyLayout: false,
-      },
+        langKeyDefault: "zh-hans",
+        useLangKeyLayout: false
+      }
     },
-    `gatsby-plugin-catch-links`,
-  ],
+    `gatsby-plugin-catch-links`
+  ]
 };
