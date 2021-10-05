@@ -22,7 +22,7 @@ a {
 .ali-toys-minesweeper > table > tbody > tr > td {
   width: 40px;
   height: 40px;
-  background-color: #4CE;
+  background-color: #1AC;
   margin: 1px;
   border: 1px solid #2BD;
   border-radius: 2px;
@@ -33,12 +33,12 @@ a {
   transition: background-color 0.6s;
 }
 .ali-toys-minesweeper > table > tbody > tr > td:hover {
-  background-color: #7DF;
+  background-color: #2BD;
   -webkit-transition: background-color 0.2s;
   transition: background-color 0.2s;
 }
 .ali-toys-minesweeper > table > tbody > tr > td.ali-state-active-t {
-  background-color: white;
+  background-color: #333;
   -webkit-transition: background-color 0.4s;
   transition: background-color 0.4s;
   cursor: default;
@@ -49,20 +49,30 @@ a {
   -ms-user-select: none;
   -webkit-user-select: none;
   user-select: none;
+  -webkit-transition: background-color 0.1s;
+  transition: background-color 0.1s;
 }
 .ali-container-actions .ali-button-action {
-  background-color: #EEE;
+  color: #DDD;
+  background-color: #333;
   padding: 8px 16px;
-  border: 1px solid #DDD;
+  border: 1px solid #444;
   border-radius: 4px;
   display: inline-block;
   cursor: pointer;
-  -webkit-transition: background-color 0.6s;
-  transition: background-color 0.6s;
+  transition: 0.6s;
 }
 .ali-container-actions .ali-button-action:hover {
-  background-color: #CCC;
-  border: 1px solid #CCC;
-  -webkit-transition: background-color 0.2s;
-  transition: background-color 0.2s;
+  color: #FFF;
+  background-color: #444;
+  border: 1px solid #555;
+  transition: 0.2s;
+  box-shadow: black 1px 1px 4px;
+}
+.ali-container-actions .ali-button-action:active {
+  color: #FFF;
+  background-color: #333;
+  border: 1px solid #555;
+  transition: 0.2s;
+  box-shadow: black 0 0 4px;
 }
