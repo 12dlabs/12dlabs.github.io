@@ -12,7 +12,7 @@ window.pgCtrl = (function () {
         document.body.appendChild(ele);
         ele = document.createElement("header");
         ele.innerHTML = "<section><h1><a href=\"https://12dlabs.github.io\"><strong>12D</strong><span>Labs</span></a></h1><ul>"
-            + menu.map(ele => "<li><a href=\"" + ele.url + "\">" + ele.name + "</a></li>")
+            + menu.map(ele => "<li><a href=\"" + ele.url + "\">" + ele.name + "</a></li>").join("")
             + "</ul></section>";
         document.body.insertBefore(ele, document.body.children[0]);
     };
