@@ -2,34 +2,37 @@
 <html>
 <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Minesweeper</title>
+    <script type="text/javascript" src="../../static/js/layout.js" ></script>
     <script src="index.js" type="text/javascript" charset="utf-8"></script>
+    <link href="../../css/layout.css" rel="stylesheet" />
     <link href="common.css" rel="stylesheet" />
 </head>
 <body>
-    <div id="demo_container">
-        <div id="demo_container_action" class="ali-container-actions">
+    <section id="demo_container" style="min-height: 640px; margin-bottom: 60px; ">
+        <h2>Mimesweeper</h2>
+        <section id="demo_container_action" class="ali-container-actions">
             <span id="demo_container_action_new" class="ali-button-action">New Game</span>
-        </div>
-        <div id="demo_container_minesweeper"></div>
-    </div>
+        </section>
+        <section id="demo_container_minesweeper"></section>
+    </section>
     <script type="text/javascript">
-        <!--
-        (function () {
-            var minesweeper = new Minesweeper("demo_container_minesweeper");
-            var newGame = function () {
-                minesweeper.start({
-                    count: 10,
-                    x: 9,
-                    y: 9
-                });
-            };
+    (function () {
+        var minesweeper = new Minesweeper("demo_container_minesweeper");
+        var newGame = function () {
+            minesweeper.start({
+                count: 10,
+                x: 9,
+                y: 9
+            });
+        };
+        newGame();
+        document.getElementById("demo_container_action_new").onclick = function (ev) {
             newGame();
-            document.getElementById("demo_container_action_new").onclick = function (ev) {
-                newGame();
-            };
-        })();
-        //-->
+        };
+    })();
+    pgCtrl.init();
     </script>
 </body>
 </html>
