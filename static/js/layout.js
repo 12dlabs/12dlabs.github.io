@@ -1,9 +1,8 @@
 window.pgCtrl = (function () {
     var menu = [
-        { name: "Blogs", url: "https://12dlabs.github.io/blog" },
+        { name: "Blogs", url: "https://12dlabs-github-io.vercel.app" },
         { name: "Games", url: "https://12dlabs.github.io/games" },
-        { name: "CompositeJs", url: "https://compositejs.github.io" },
-        { name: "Kingcean.org", url: "https://kingcean.org" }
+        { name: "CompositeJs", url: "https://compositejs.github.io" }
     ];
 
     function init () {
