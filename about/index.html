@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>About 12D Labs</title>
+    <script type="text/javascript" src="../static/js/layout.js" ></script>
+    <link href="../css/layout.css" rel="stylesheet" />
+    <style type="text/css">
+    a.x-link, a.x-link:visited {
+        color: #CCC;
+        font-size: 18px;
+        text-decoration: none;
+        line-height: 24px;
+        background-color: #282828;
+        padding: 24px;
+        margin: 0 8px 8px 0;
+        border: 1px solid #333;
+        border-radius: 4px;
+        display: block;
+    }
+    a.x-link:hover {
+        color: #EEE;
+        text-decoration: none;
+        background-color: #333;
+        border-color: #555;
+        box-shadow: #111 1px 1px 4px;
+    }
+    a.x-link:active {
+        color: #9EF;
+        background-color: #282828;
+        text-decoration: none;
+        border-color: #444;
+        box-shadow: #111 0 0 4px;
+    }
+    a.x-link > img {
+        width: 24px;
+        height: 24px;
+        padding: 0;
+        margin: 0 8px 0 0;
+        vertical-align: middle;
+        display: inline-block;
+    }
+    a.x-link > svg, a.x-link:visited > svg {
+        fill: #CCC;
+        width: 24px;
+        height: 24px;
+        padding: 0;
+        margin: 0 8px 0 0;
+        vertical-align: middle;
+        display: inline-block;
+    }
+    a.x-link:hover > svg {
+        fill: #EEE;
+    }
+    a.x-link:active > svg {
+        fill: #9EF;
+    }
+    a.x-link > span {
+        line-height: 24px;
+        vertical-align: middle;
+        display: inline-block;
+    }
+    a.x-link > span > span {
+        color: #888;
+        font-size: 16px;
+        transition: 0.4s;
+    }
+    a.x-link:hover > span > span {
+        color: #999;
+    }
+    section#team-members {
+        min-height: 420px;
+        margin-bottom: 100px;
+    }
+    section#team-members > section > div {
+        width: 200px;
+        height: 100px;
+        padding: 10px 20px 0 100px;
+        margin: 10px 0 20px 0;
+        vertical-align: top;
+        display: inline-block;
+        position: relative;
+        user-select: none;
+    }
+    section#team-members > section > div > img {
+        width: 80px;
+        height: 80px;
+        border: 5px solid #333;
+        border-radius: 45px;
+        display: inline-block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transition: 0.4s;
+    }
+    section#team-members > section > div:hover > img {
+        width: 90px;
+        height: 90px;
+        border-width: 0;
+    }
+    section#team-members > section > div > strong {
+        font-weight: normal;
+        font-size: 18px;
+        line-height: 30px;
+        margin-bottom: 5px;
+        display: block;
+        transition: 0.2s;
+    }
+    section#team-members > section > div:hover > strong {
+        color: #EEE;
+    }
+    section#team-members > section > div > span {
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 20px;
+        display: block;
+    }
+    </style>
+    <script type="text/javascript">
+    function showMoreProjects() {
+        ["project-item-chemistry", "project-item-quark", "project-item-apass", "project-item-nine", "project-item-sop", "project-item-iqiyi"].forEach(function (ele, i) {
+            document.getElementById(ele).style.display = "";
+        });
+        document.getElementById("project-more").style.display = "none";
+    }
+    </script>
+</head>
+<body>
+    <section style="margin-bottom: 60px; ">
+        <h2>About us</h2>
+        <section>
+            <span>A front-end technology community group. We are here to talk about the front and interesting things of it.</span>
+        </section>
+        <section>
+            <span>What does 12D mean?<br />-<strong>A:</strong>
+                String theory tells us there are 11 dimension in the universe.</span>
+        </section>
+    </section>
+    <section id="team-members">
+        <h2>Team members</h2>
+        <section>
+            <div>
+                <img alt="Kingcean" src="../images/avatars/WP_20170530_16_55_37_Pro.jpg" />
+                <strong>Kingcean Tuan</strong>
+                <span><a href="https://kingcean.org">Kingcean.org</a></span>
+                <span><a href="https://kingcean.net">Kingcean.net</a></span>
+            </div><div>
+                <img alt="Winni" src="../images/avatars/winni.jpg" />
+                <strong>Winni Ma</strong>
+                <span><a href="https://github.com/littuoMuXin">GitHub profile</a></span>
+            </div><div>
+                <img alt="Aaronphy" src="../images/avatars/aaronphy.jpg" />
+                <strong>Aaronphy Ma</strong>
+                <span><a href="https://aaronphy.github.io">Personal homepage</a></span>
+            </div><div>
+                <img alt="ls" src="../images/avatars/ls.jpg" />
+                <strong>ls</strong>
+                <span><a href="https://github.com/lishengzxc">GitHub profile</a></span>
+            </div><div>
+                <img alt="Sundway" src="../images/avatars/sundway.jpg" />
+                <strong>HotSundway Sun</strong>
+                <span><a href="http://sundway.me">Sundway.me</a></span>
+            </div>
+        </section>
+    </section>
+    <script type="text/javascript">
+    pgCtrl.init("about");
+    </script>
+</body>
+</html>
