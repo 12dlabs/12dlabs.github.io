@@ -3,7 +3,7 @@ module.exports = {
     title: "12DLabs",
     author: "12DLabs",
     description: "Blog of 12DLabs.",
-    siteUrl: "https://overreacted.io"
+    siteUrl: "https://12dlabs.github.io"
   },
   pathPrefix: "/",
   plugins: [
