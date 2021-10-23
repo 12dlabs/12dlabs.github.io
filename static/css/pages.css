@@ -1,0 +1,513 @@
+﻿@charset "utf-8";
+/*  --------------------
+ *  Page style - Labs online
+ *  (c) Kingcean Tuan, 2014.
+ *
+ *  File  pages.less
+ *  Description  Page CSS.
+ *  Owner  Kingcean Tuan <kingcean@live.com>
+ *  --------------------  */
+.ali-app-hub-home-site.ali-size-s > .ali-page-l-show ul#ali_head_menu,
+.ali-app-hub-home-site.ali-size-xs > .ali-page-l-show ul#ali_head_menu,
+.ali-app-hub-home-site.ali-size-xxs > .ali-page-l-show ul#ali_head_menu {
+  display: block;
+}
+.ali-app-hub-home-site > body.ali-page-l-show {
+  padding: 0;
+  margin: 0;
+}
+.ali-app-hub-home-site > body.ali-page-l-show a,
+.ali-app-hub-home-site > body.ali-page-l-show a:visited {
+  color: #09F;
+}
+.ali-app-hub-home-site > body.ali-page-l-show a:hover {
+  color: #F60;
+}
+.ali-app-hub-home-site > body.ali-page-l-show a:active {
+  color: black;
+}
+body.ali-app-labs {
+  color: #DDD;
+  background-color: #222;
+}
+@keyframes ali-labs-projects-opacity-show {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes ali-labs-projects-opacity-show {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+body.ali-app-labs .ali-labs-projects {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+body.ali-app-labs .ali-labs-projects > p:first-child {
+  color: #666;
+  font-size: 16px;
+  line-height: 24px;
+}
+body.ali-app-labs .ali-labs-projects > .ali-labs-projects-filter {
+  display: block;
+  -webkit-animation: ali-labs-projects-opacity-show 2s;
+  animation: ali-labs-projects-opacity-show 2s;
+}
+body.ali-app-labs .ali-labs-projects > .ali-labs-projects-filter > ul,
+body.ali-app-labs .ali-labs-projects > .ali-labs-projects-filter > ul > li {
+  list-style: none;
+}
+body.ali-app-labs .ali-labs-projects > .ali-labs-projects-filter > ul {
+  color: #666;
+  padding: 10px 0 0 0;
+  margin: 0;
+  display: block;
+}
+body.ali-app-labs .ali-labs-projects > .ali-labs-projects-filter > ul > li {
+  line-height: 20px;
+  padding: 0;
+  margin: 0 10px 0 0;
+  display: inline-block;
+}
+body.ali-app-labs .ali-labs-projects > .ali-labs-projects-filter > ul > li > a,
+body.ali-app-labs .ali-labs-projects > .ali-labs-projects-filter > ul > li > span,
+body.ali-app-labs .ali-labs-projects > .ali-labs-projects-filter > ul > li > em,
+body.ali-app-labs .ali-labs-projects > .ali-labs-projects-filter > ul > li > strong {
+  background-color: transparent;
+  padding: 0 10px;
+  margin: 0;
+  border: 0 none transparent;
+  border-radius: 10px;
+  display: inline-block;
+}
+body.ali-app-labs .ali-labs-projects > .ali-labs-projects-filter > ul > li > a {
+  color: #c20c23;
+}
+body.ali-app-labs .ali-labs-projects > .ali-labs-projects-filter > ul > li > a.ali-state-em-t {
+  color: white;
+  background-color: #c20c23;
+}
+body.ali-app-labs .ali-labs-projects > .ali-labs-projects-filter > div {
+  padding: 10px;
+}
+body.ali-app-labs .ali-labs-projects > .ali-labs-projects-filter > div > strong,
+body.ali-app-labs .ali-labs-projects > .ali-labs-projects-filter > div > span,
+body.ali-app-labs .ali-labs-projects > .ali-labs-projects-filter > div > em,
+body.ali-app-labs .ali-labs-projects > .ali-labs-projects-filter > div > a {
+  margin-right: 10px;
+  display: inline-block;
+}
+body.ali-app-labs .ali-labs-projects > .ali-labs-projects-filter > div > strong {
+  font-size: 20px;
+}
+body.ali-app-labs .ali-labs-projects > .ali-labs-projects-list {
+  padding-top: 10px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #CCC;
+  display: block;
+  -webkit-animation: ali-labs-projects-opacity-show 2s;
+  animation: ali-labs-projects-opacity-show 2s;
+}
+body.ali-app-labs .ali-labs-projects .ali-labs-projects-list > ul > li.ali-container-main {
+  padding: 0;
+  margin: 0;
+  display: inline-block;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+body.ali-app-labs .ali-labs-projects .ali-labs-projects-list > ul > li.ali-container-main > div.ali-container-main {
+  color: #EEE;
+  background: #333;
+  padding: 0;
+  margin: 4px;
+  text-align: center;
+  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+  position: relative;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+body.ali-app-labs .ali-labs-projects .ali-labs-projects-list > ul > li.ali-container-main > div.ali-container-main > img {
+  width: 240px;
+  height: 180px;
+  padding: 0;
+  margin: 0;
+  display: block;
+}
+body.ali-app-labs .ali-labs-projects .ali-labs-projects-list > ul > li.ali-container-main > div.ali-container-main > span {
+  width: 100%;
+  height: 30px;
+  line-height: 30px;
+  padding: 0;
+  margin: 0;
+  display: block;
+}
+body.ali-app-labs .ali-labs-projects .ali-labs-projects-list > ul > li.ali-container-main > div.ali-container-main:hover {
+  color: white;
+  background: #c20c23;
+  -webkit-transition: 0.1s;
+  transition: 0.1s;
+}
+body.ali-app-labs .ali-labs-projects > div.ali-labs-projects-detail {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  display: block;
+  -webkit-animation: ali-labs-projects-opacity-show 1s;
+  animation: ali-labs-projects-opacity-show 1s;
+}
+body.ali-app-labs .ali-labs-projects > div.ali-labs-projects-additional > div {
+  padding: 20px 0;
+  border-top: 1px solid #CCC;
+  display: block;
+}
+body.ali-app-labs .ali-labs-projects > .ali-labs-projects-intro {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  display: block;
+  position: relative;
+  -webkit-animation: ali-labs-projects-opacity-show 4s;
+  animation: ali-labs-projects-opacity-show 4s;
+}
+body.ali-app-labs .ali-labs-projects > .ali-labs-projects-intro > h3 + img {
+  position: absolute;
+  top: 30px;
+  right: 0;
+  width: 160px;
+}
+body.ali-app-labs .ali-labs-projects > .ali-labs-projects-intro > p.ali-container-main {
+  max-width: 800px;
+  padding-right: 180px;
+}
+body.ali-app-labs .ali-labs-projects > .ali-labs-projects-intro > ul.ali-x-section-usages {
+  padding: 10px 0 0 0;
+  margin: 0;
+  list-style: none;
+}
+body.ali-app-labs .ali-labs-projects > .ali-labs-projects-intro > ul.ali-x-section-usages > li {
+  background-color: white;
+  width: 360px;
+  height: 110px;
+  padding: 10px;
+  margin: 0 10px 10px 0;
+  border: 1px solid #DDD;
+  border-radius: 4px;
+  list-style: none;
+  display: inline-block;
+  overflow: hidden;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+}
+body.ali-app-labs .ali-labs-projects > .ali-labs-projects-intro > ul.ali-x-section-usages > li > strong {
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 30px;
+  height: 30px;
+  display: block;
+}
+body.ali-app-labs .ali-labs-projects > .ali-labs-projects-intro > ul.ali-x-section-usages > li > span {
+  line-height: 20px;
+  display: block;
+}
+body.ali-app-labs .ali-labs-projects > div.ali-labs-projects-magazines {
+  padding-top: 0;
+  padding-bottom: 20px;
+}
+body.ali-app-labs .ali-labs-projects > div.ali-labs-projects-magazines ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+body.ali-app-labs .ali-labs-projects > div.ali-labs-projects-magazines ul > li.ali-container-main {
+  width: 100%;
+  max-width: 400px;
+  padding: 8px 0;
+  margin: 0;
+  list-style: none;
+  display: inline-block;
+}
+body.ali-app-labs .ali-labs-projects > div.ali-labs-projects-magazines ul > li.ali-container-group-title {
+  display: none;
+}
+body.ali-app-labs .ali-labs-projects > div.ali-labs-projects-text {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  clear: both;
+}
+body.ali-app-labs .ali-labs-projects > div.ali-labs-projects-detail.ali-state-active-f + div.ali-labs-projects-additional {
+  display: none;
+}
+body.ali-app-labs .ali-labs-projects > div.ali-labs-projects-text + div.ali-labs-projects-text,
+body.ali-app-labs .ali-labs-projects > div.ali-labs-projects-magazines + div.ali-labs-projects-text,
+body.ali-app-labs .ali-labs-projects > div.ali-labs-projects-detail + div + div.ali-labs-projects-text {
+  border-top: 1px solid #CCC;
+}
+body.ali-app-labs .ali-labs-projects > div.ali-labs-projects-detail.ali-state-active-f + div + h3 {
+  display: none;
+}
+body.ali-app-labs .ali-labs-projects > h3 {
+  font-size: 24px;
+  font-weight: 200;
+  line-height: 50px;
+  padding: 10px 0;
+  margin: 0;
+  cursor: default;
+  clear: both;
+}
+body.ali-app-labs .ali-labs-projects > div.ali-state-active-f {
+  display: none;
+}
+.ali-size-xxxs body.ali-app-labs .ali-labs-projects .ali-labs-projects-list > ul > li.ali-container-main > div.ali-container-main > img,
+.ali-size-xxs body.ali-app-labs .ali-labs-projects .ali-labs-projects-list > ul > li.ali-container-main > div.ali-container-main > img,
+.ali-size-xs body.ali-app-labs .ali-labs-projects .ali-labs-projects-list > ul > li.ali-container-main > div.ali-container-main > img {
+  width: 200px;
+  height: 150px;
+}
+.ali-size-xxxs body.ali-app-labs .ali-labs-projects > .ali-labs-projects-intro > h3 + img,
+.ali-size-xxs body.ali-app-labs .ali-labs-projects > .ali-labs-projects-intro > h3 + img,
+.ali-size-xs body.ali-app-labs .ali-labs-projects > .ali-labs-projects-intro > h3 + img {
+  display: none;
+}
+.ali-size-xxxs body.ali-app-labs .ali-labs-projects > .ali-labs-projects-intro > p.ali-container-main,
+.ali-size-xxs body.ali-app-labs .ali-labs-projects > .ali-labs-projects-intro > p.ali-container-main,
+.ali-size-xs body.ali-app-labs .ali-labs-projects > .ali-labs-projects-intro > p.ali-container-main {
+  padding-right: 0;
+}
+.ali-size-xxxs body.ali-app-labs .ali-labs-projects > .ali-labs-projects-intro > ul.ali-x-section-usages > li,
+.ali-size-xxs body.ali-app-labs .ali-labs-projects > .ali-labs-projects-intro > ul.ali-x-section-usages > li,
+.ali-size-xs body.ali-app-labs .ali-labs-projects > .ali-labs-projects-intro > ul.ali-x-section-usages > li {
+  width: auto;
+  display: block;
+}
+body.ali-app-labs .ali-labs-projects > div.ali-labs-projects-detail > div.ali-container-main {
+  position: relative;
+}
+body.ali-app-labs .ali-labs-projects > div.ali-labs-projects-detail > div.ali-container-main > .ali-x-section-title {
+  min-height: 240px;
+  padding-left: 340px;
+}
+body.ali-app-labs .ali-labs-projects > div.ali-labs-projects-detail > div.ali-container-main > .ali-x-section-title > img {
+  width: 320px;
+  height: 240px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+body.ali-app-labs .ali-labs-projects > div.ali-labs-projects-detail > div.ali-container-main > .ali-x-section-title > h4 {
+  font-size: 36px;
+  font-weight: 200;
+  line-height: 50px;
+  height: 50px;
+  padding: 0;
+  margin: 0 0 10px 0;
+}
+body.ali-app-labs .ali-labs-projects > div.ali-labs-projects-detail > div.ali-container-main > .ali-x-section-title > ul {
+  padding: 0;
+  margin: 0 0 10px 0;
+  list-style: none;
+}
+body.ali-app-labs .ali-labs-projects > div.ali-labs-projects-detail > div.ali-container-main > .ali-x-section-title > ul > li {
+  color: #666;
+  padding: 0;
+  margin: 0 10px 0 0;
+  list-style: none;
+  display: inline-block;
+}
+body.ali-app-labs .ali-labs-projects > div.ali-labs-projects-detail > div.ali-container-main > .ali-x-section-title > em {
+  color: white;
+  font-style: normal;
+  font-weight: normal;
+  background-color: #c20c23;
+  padding: 4px 10px;
+  margin: 0;
+  border: 1px solid #c20c23;
+  border-radius: 8px;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  display: block;
+  cursor: pointer;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+body.ali-app-labs .ali-labs-projects > div.ali-labs-projects-detail > div.ali-container-main > .ali-x-section-title > em:hover {
+  background-color: red;
+  -webkit-transition: 0.1s;
+  transition: 0.1s;
+}
+body.ali-app-labs .ali-labs-projects > div.ali-labs-projects-detail > div.ali-container-main > .ali-x-section-title > p {
+  font-size: 16px;
+  line-height: 24px;
+  max-width: 800px;
+  padding: 0;
+  margin: 0 0 20px 0;
+}
+body.ali-app-labs .ali-labs-projects > div.ali-labs-projects-detail > div.ali-container-main > ul.ali-x-section-links {
+  padding: 0;
+  margin: 0 0 10px 0;
+  list-style: none;
+}
+body.ali-app-labs .ali-labs-projects > div.ali-labs-projects-detail > div.ali-container-main > ul.ali-x-section-links > li {
+  padding: 0;
+  margin: 0;
+  font-size: 18px;
+  line-height: 30px;
+  height: 30px;
+  list-style: none;
+}
+body.ali-app-labs .ali-labs-projects > div.ali-labs-projects-detail > div.ali-container-main > ul.ali-x-section-links > li > a,
+body.ali-app-labs .ali-labs-projects > div.ali-labs-projects-detail > div.ali-container-main > ul.ali-x-section-links > li > a:visited {
+  color: #c20c23;
+  text-decoration: none;
+  background-color: transparent;
+  max-width: 640px;
+  padding: 1px 40px;
+  border: 0 none transparent;
+  border-radius: 4px;
+  display: block;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  -webkit-transition: background-color 0.5s;
+  transition: background-color 0.5s;
+}
+body.ali-app-labs .ali-labs-projects > div.ali-labs-projects-detail > div.ali-container-main > ul.ali-x-section-links > li > a:hover {
+  padding: 0 39px;
+  border: 1px solid #CCC;
+  color: #F60;
+  background-color: white;
+  -webkit-transition: background-color 0.1s;
+  transition: background-color 0.1s;
+}
+body.ali-app-labs .ali-labs-projects > div.ali-labs-projects-detail > div.ali-container-main > div.ali-x-section-video {
+  padding-top: 10px;
+}
+body.ali-app-labs .ali-labs-projects > div.ali-labs-projects-detail > div.ali-container-main > div.ali-x-section-video > video {
+  width: 100%;
+  max-width: 800px;
+}
+body.ali-app-labs .ali-labs-projects > div.ali-labs-projects-detail > div.ali-container-main > ul.ali-x-section-show {
+  padding: 0;
+  margin: 0 0 10px 0;
+  list-style: none;
+  display: block;
+}
+body.ali-app-labs .ali-labs-projects > div.ali-labs-projects-detail > div.ali-container-main > ul.ali-x-section-show > li {
+  padding: 0;
+  margin: 0;
+  display: block;
+}
+body.ali-app-labs .ali-labs-projects > div.ali-labs-projects-detail > div.ali-container-main > ul.ali-x-section-show > li > img {
+  max-width: 1000px;
+  max-height: 1000px;
+}
+.ali-size-xxxs body.ali-app-labs .ali-labs-projects > div.ali-labs-projects-detail > div.ali-container-main > .ali-x-section-title,
+.ali-size-xxs body.ali-app-labs .ali-labs-projects > div.ali-labs-projects-detail > div.ali-container-main > .ali-x-section-title,
+.ali-size-xs body.ali-app-labs .ali-labs-projects > div.ali-labs-projects-detail > div.ali-container-main > .ali-x-section-title,
+.ali-size-s body.ali-app-labs .ali-labs-projects > div.ali-labs-projects-detail > div.ali-container-main > .ali-x-section-title {
+  padding-left: 0;
+}
+.ali-size-xxxs body.ali-app-labs .ali-labs-projects > div.ali-labs-projects-detail > div.ali-container-main > .ali-x-section-title > img,
+.ali-size-xxs body.ali-app-labs .ali-labs-projects > div.ali-labs-projects-detail > div.ali-container-main > .ali-x-section-title > img,
+.ali-size-xs body.ali-app-labs .ali-labs-projects > div.ali-labs-projects-detail > div.ali-container-main > .ali-x-section-title > img,
+.ali-size-s body.ali-app-labs .ali-labs-projects > div.ali-labs-projects-detail > div.ali-container-main > .ali-x-section-title > img {
+  position: relative;
+}
+.ali-app-hub-home-site > body.ali-page-l-show #ali_head {
+  color: #CCC;
+  height: 50px;
+  background-color: rgba(32, 32, 32, 0.9);
+  border: 0 none transparent;
+  box-shadow: 0 1px 16px rgba(16, 16, 16, 0.4);
+}
+.ali-app-hub-home-site > body.ali-page-l-show #ali_head h1#ali_head_title {
+  color: #EEE;
+  text-align: left;
+  line-height: 50px;
+  width: 100px;
+  height: 50px;
+  padding: 0;
+  margin: 0;
+  display: block;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+}
+.ali-app-hub-home-site > body.ali-page-l-show #ali_head #ali_head_title a {
+  color: #CCC;
+}
+.ali-app-hub-home-site > body.ali-page-l-show #ali_head ul#ali_head_menu {
+  line-height: 50px;
+  padding: 0 20px;
+}
+.ali-app-hub-home-site > body.ali-page-l-show #ali_head ul#ali_head_user {
+  padding: 0 20px;
+}
+.ali-app-hub-home-site > body.ali-page-l-show #ali_head ul#ali_head_menu > li a,
+.ali-app-hub-home-site > body.ali-page-l-show #ali_head ul#ali_head_user > li a {
+  color: #DDD;
+}
+.ali-app-hub-home-site > body.ali-page-l-show #ali_head ul#ali_head_menu > li a:hover,
+.ali-app-hub-home-site > body.ali-page-l-show #ali_head ul#ali_head_user > li a:hover {
+  color: white;
+}
+.ali-app-hub-home-site > body.ali-page-l-show #ali_head ul#ali_head_menu > li.ali-state-active-t.ali-container-menu {
+  background-color: #c20c23;
+  border-radius: 0;
+}
+.ali-app-hub-home-site > body.ali-page-l-show #ali_head ul#ali_head_menu > li.ali-state-active-t.ali-container-menu a {
+  color: white;
+}
+.ali-app-hub-home-site > body.ali-page-l-show #ali_head #ali_head_user_sear input[type=search] {
+  color: white;
+  line-height: 30px;
+  height: 30px;
+  background-color: #555;
+  padding: 10px;
+  border: 0 none transparent;
+}
+.ali-app-hub-home-site > body.ali-page-l-show #ali_head:hover {
+  height: 50px;
+}
+.ali-app-hub-home-site > body.ali-page-l-show #ali_body {
+  padding-top: 0;
+}
+.ali-app-hub-home-site > body.ali-page-l-show #ali_body > .ali-container-main > div.ali-container-main.ali-panel-split-len-2.ali-panel-split-t-page {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.ali-app-hub-home-site > body.ali-page-l-show #ali_body .ali-panel-split-len-2.ali-panel-split-t-page > table > tbody > tr > td {
+  padding: 50px 0 0 0;
+}
+.ali-app-hub-home-site > body.ali-page-l-show #ali_body .ali-panel-split-len-2.ali-panel-split-t-page > table > tbody > tr > td.ali-container-nav {
+  padding: 70px 0 0 0;
+}
+.ali-app-hub-home-site > body.ali-page-l-show #ali_body .ali-panel-split-len-2.ali-panel-split-t-page > table > tbody > tr > td.ali-container-nav > div.ali-container-main > ul > li {
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+.ali-app-hub-home-site > body.ali-page-l-show #ali_body .ali-panel-split-len-2.ali-panel-split-t-page > table > tbody > tr > td.ali-container-nav > div.ali-container-main > ul > li:hover {
+  color: #c20c23;
+  padding-left: 16px;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+.ali-app-hub-home-site > body.ali-page-l-show #ali_body .ali-panel-split-len-2.ali-panel-split-t-page > table > tbody > tr > td.ali-container-main > div.ali-container-main {
+  padding: 0;
+}
+.ali-app-hub-home-site > body.ali-page-l-show #ali_body .ali-panel-split-t-page-frame > table > tbody > tr > td.ali-container-main > .ali-container-main > iframe {
+  width: 100%;
+  height: 960px;
+  border-style: none;
+  border-width: 0;
+}

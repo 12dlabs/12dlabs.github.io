@@ -7,7 +7,7 @@ window.pgCtrl = (function () {
 
     function init (branch) {
         var ele = document.createElement("footer");
-        ele.innerHTML = "<section><div class=\"x-copyright\" style=\"color: transparent; \"><strong>12D</strong>Labs<br /></div></section>";
+        ele.innerHTML = "<section><div class=\"x-copyright\" style=\"color: rgba(255, 255, 255, 0.2); font-size: 36px; \"><strong>12D</strong>Labs<br /></div></section>";
         document.body.appendChild(ele);
         ele = document.createElement("header");
         ele.innerHTML = "<section><h1><a href=\"https://12dlabs.github.io\"><strong>12D</strong><span>Labs</span></a></h1><ul>"

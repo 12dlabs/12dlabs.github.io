@@ -1,27 +1,14 @@
-﻿*{padding:0;margin:0;}
-li{list-style:none;}
-body{
-	font-size:12px;
-	font-family:'Helvetica Neue',Arial,sans-serif;
-	-webkit-text-size-adjust: none;color:#333;
-        -moz-user-select:none;
-	-webkit-user-select:none;
-        user-select:none
-}
+﻿#box li{list-style:none;}
 #container{
-  height:600px;
-  width:800px; 
-  overflow:hidden; 
-  position:absolute;
+  height: 800px;
+  overflow: hidden; 
 } 
 #cube_ran {
-	 
 	width:50px; 
 	height:50px;
 	border-radius:50%;
 	color:blue; 
 	font-size:20px; 
-	font-family:微软雅黑;
 	font-weight:bold;
 	line-height:50px;
 	text-align:center;
@@ -39,7 +26,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#001e5799', e
 #box{
 	position:relative;
 	top:180px;
-	left:150px;
 	width:500px;
 	height:500px;
         perspective:800px;
@@ -48,7 +34,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#001e5799', e
         -webkit-transform-style:preserve-3d;
 	-webkit-perspective:800px;
 	-moz-perspective:800px;
-        
 }
 #cube{
 	width:100px;

@@ -13,7 +13,6 @@
     var r_switch = 0;
     var ran_switch = 1;
     rotateCUBE();
-    $("#container").css("left", $(document).width() / 2 - 400 + "px");
     for (i = 1; i <= 6; i++) {
         //6个面，1前2后3右4左5上6下
         subface[i] = new Array();
