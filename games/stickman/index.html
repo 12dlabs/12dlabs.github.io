@@ -2,18 +2,22 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
-    <link rel="stylesheet" href="main.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:image" content="../../images/bg/poster.jpg">
+    <title>Stickman - 12D Labs</title>
+    <script type="text/javascript" src="../../static/scripts/layout.js" ></script>
     <script src="stickman.js"></script>
     <script src="resource.js"></script>
     <script src="demo.js"></script>
-
+    <link href="../../css/layout.css" rel="stylesheet" />
+    <link rel="stylesheet" href="main.css">
 </head>
 <body>
 
-<canvas id="canvas_logo" width="120px" height="120px" class=" canvas_logo_start canvas_logo_show">抱歉，你的浏览器不支持canvas，建议你使用Chrome浏览器。</canvas>
-<section id="section-demo" class="section-demo">
+<section>
+<section id="section-demo">
     <div id="demo">
+        <canvas id="canvas_logo" width="120px" height="120px" class=" canvas_logo_start canvas_logo_show">抱歉，你的浏览器不支持canvas，建议你使用Chrome浏览器。</canvas>
         <canvas id="canvas" width="800px" height="550px">抱歉，你的浏览器不支持canvas，建议你使用Chrome浏览器。</canvas>
         <img src="texture.png" id="xiaoxiaoImg" style="display:none;">
 
@@ -106,17 +110,13 @@
 
         </div>
     </div>
-
 </section>
-
-<script type="text/javascript">
-
+</section>
+    <script type="text/javascript">
+    pgCtrl.init("games");
     var _gaq = _gaq || [];
     _gaq.push(['_setAccount', 'UA-23019343-9']);
     _gaq.push(['_trackPageview']);
-
-
-</script>
-
+    </script>
 </body>
 </html>

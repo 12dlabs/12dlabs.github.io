@@ -4,6 +4,7 @@ window.pgCtrl = (function () {
         { id: "games", name: "Games", url: "https://12dlabs.github.io/games" },
         { id: "about", name: "About", url: "https://12dlabs.github.io/about" }
     ];
+    var menuEle;
     try {
         var q = window.location.search;
         if (q) {
@@ -14,6 +15,7 @@ window.pgCtrl = (function () {
         }
     } catch (ex) {}
     function init (branch) {
+        if (menuEle) return;
         var ele = document.createElement("footer");
         ele.innerHTML = "<section><div class=\"x-copyright\" style=\"color: rgba(255, 255, 255, 0.2); font-size: 36px; \"><strong>12D</strong>Labs<br /></div></section>";
         document.body.appendChild(ele);
@@ -22,9 +24,20 @@ window.pgCtrl = (function () {
             + menu.map(ele => "<li" + (branch === ele.id ? " class=\"state-sel\"" : "") + "><a href=\"" + ele.url + "\">" + ele.name + "</a></li>").join("")
             + "</ul></section>";
         document.body.insertBefore(ele, document.body.children[0]);
+        menuEle = ele.firstChild.lastChild;
     };
-
+    function addMenu(item) {
+        if (!item || !item.id || !item.name || !item.url || menu.some(function (ele) {
+            return ele.id === item.id;
+        })) return;
+        menu.push(item);
+        if (!menuEle) return;
+        var li = document.createElement("li");
+        li.innerHTML = "<a href=\"" + item.url + "\">" + item.name + "</a>";
+        menuEle.appendChild(li);
+    }
     return {
-        init
+        init,
+        addMenu
     };
 })();

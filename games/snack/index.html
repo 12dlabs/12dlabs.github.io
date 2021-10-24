@@ -2,11 +2,16 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta property="og:image" content="../../images/bg/poster.jpg">
   <title>Snake</title>
+  <script type="text/javascript" src="../../static/scripts/layout.js" ></script>
+  <link href="../../css/layout.css" rel="stylesheet" />
 </head>
 <body>
-<div class="game" style="display: flex">
-  <canvas id="can" width="400" height="400" style="background:#f6f6f6"></canvas>
+  <section style="min-height: 640px; ">
+<section class="game" style="display: flex; ">
+  <canvas id="can" width="400" height="400" style="background: #333; "></canvas>
   <div class="container" style="flex: 1; text-align: center; border: 1px solid #aaa;">
     <p>经典游戏贪吃蛇。</p>
     <marquee behavior="alternate">
@@ -53,8 +58,10 @@
                                 cursor: pointer;"
                                 onclick="speed = speed + 50">减速</button>
   </div>
-</div>
-<script>
+</section>
+  </section>
+<script type="text/javascript">
+  pgCtrl.init("games");
   var speed = 300;
   var score = -10;
   var sn=[42,41],dz=43,fx=1,n,ctx=document.getElementById("can").getContext("2d");
@@ -98,7 +105,7 @@
       var color = ["aqua", "blue", "fuchsia", "gray", "green", "lime", "maroon", "navy", "purple", "teal"];
       draw(dz, color[Math.floor(Math.random()*10)], 8);
     }else{
-      draw(sn.pop(),"#f6f6f6", 11);
+      draw(sn.pop(),"#333", 11);
     }
     setTimeout(arguments.callee, speed);
   }();

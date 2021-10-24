@@ -1,38 +1,14 @@
-body{
-    margin: 0;
-    padding: 0;
-    color: #DDDDDD;
-    font: 16px/2 Tahoma, 'Microsoft YaHei', sans-serif;
-    background: #424242;
-}
-
-a{
-    color: #58A7EB;
-    text-decoration: none;
-}
-a:hover{
-    text-decoration: underline;
-}
-p{
-    text-indent: 2em;
-}
 .banner p,#demo p{
     text-indent: 0;
 }
-h3{
-    color: #FFAA00;
-    font: 40px 'Segoe UI Light','Segoe UI','Microsoft Jhenghei','Microsoft YaHei',sans-serif;
-
-}
 .section-title{
     font-size: 26px;
-    color: black;
+    color: #DDD;
     background: #F1C40F;
     width: 450px;
     margin: 60px 0 20px;
     text-indent: 20px;
     position: relative;
-
 }
 .section-title .title-triangle{
     width: 0px;
@@ -46,52 +22,18 @@ h3{
     top: 0;
 }
 
-header{
-    position: relative;
-    height: 200px;
-    line-height: 1.5;
-    /*overflow: hidden;*/
-    font-family: 'Segoe UI Light','Segoe UI','Microsoft Jhenghei','Microsoft YaHei',sans-serif;
-}
-section{
-    position: relative;
-}
-
-nav{
-    position: absolute;
-    top: 0;
-    right: 0;
-
-    width: 280px;
-    font-size: 18px;
-    text-align: right;
-    border-right: 3px solid #FAC851;
-}
-
-footer{
-
-    color: #666;
-    height: 100px;
-    text-align: center;
-    line-height: 50px;
-    margin-top: 100px;
-    font-size: 12px;
-}
-
-
 /************************************   demo block css *****************************************/
 #demo{
+    background-color: #333;
+    border-radius: 4px;
     position: relative;
-    border-style: dashed;
-    border-color: white transparent;
-    box-shadow: 0px 5px 10px 5px rgba(29, 23, 23, 0.5);
+    overflow: hidden;
 }
 .wording{
     position: absolute;
     left: 400px;
     top: 0;
     width: 624px;
-    font: 20px 'Segoe UI Light','Segoe UI','Microsoft Jhenghei','Microsoft YaHei',sans-serif;
 }
 .wording div{
     position: absolute;
@@ -197,7 +139,7 @@ footer{
 
 .keyboard{
     float: left;
-    width: 500px;
+    max-width: 500px;
     display: inline-block;
 }
 
@@ -512,13 +454,10 @@ footer{
     top: 8px;
 }
 
-
 #canvas_logo{
     position: absolute;
-
     left: 700px;
-    top:50px;
-
+    top: 50px;
 }
 .canvas_logo_start{
     -webkit-animation: logo-anim 5.15s linear;
@@ -585,7 +524,7 @@ footer{
     left: 0!important;
 }
 .canvas_logo_show{
-    left: -5px !important;
+    left: 100px !important;
 }
 .logo_show{
     opacity: 1 !important;

@@ -3,7 +3,6 @@
  */
 var alloyge = {};
 
-
 ;(function(){
 
   var requestAnimationFrame = window.requestAnimationFrame ||
@@ -13,8 +12,6 @@ var alloyge = {};
     function( callback ){
       window.setTimeout(callback, 1000/60);
     };
-
-
 
   /**************  AlloyStict 基础函数 || 辅助类 *****************/
   ;(function(){
@@ -64,8 +61,6 @@ var alloyge = {};
         return (o === "" || o) && (o.constructor === String);
       }
     }
-
-
 
     alloyge.monitorDom = null;
     alloyge.monitorFPS = function(scene){
