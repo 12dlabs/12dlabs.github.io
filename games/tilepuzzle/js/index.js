@@ -55,7 +55,7 @@ function slide(num) {
     gameArr[mark] = tmp;
     mark = num;
     moves++;
-    document.getElementById(101).innerHTML = "<h3>已经移动:" + moves + "次</h3>";
+    document.getElementById(101).innerHTML = "<h3>Number of moves (移动次数): " + moves + "</h3>";
     checkWin();
   }
 }

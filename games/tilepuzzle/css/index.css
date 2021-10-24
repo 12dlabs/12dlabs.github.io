@@ -1,0 +1,20 @@
+@charset "utf-8";
+/* CSS Document */
+.correct {
+    border: 2px solid #090;
+}
+.normal {
+    border: 2px solid #eeeeec;
+}
+.bg {
+    background-image: url("../images/background.png");
+    background-repeat: repeat-x;
+}
+.rules {
+    font-size: 1.1em;
+    color: #222222;
+}
+#reset{
+    cursor: pointer;
+    text-align: center;
+}

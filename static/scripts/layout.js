@@ -4,7 +4,15 @@ window.pgCtrl = (function () {
         { id: "games", name: "Games", url: "https://12dlabs.github.io/games" },
         { id: "about", name: "About", url: "https://12dlabs.github.io/about" }
     ];
-
+    try {
+        var q = window.location.search;
+        if (q) {
+            if (q === "?kingcean")
+                menu.push({ id: "kingcean", name: "Kingcean.org", url: "https://kingcean.org" });
+            if (q === "?compositejs")
+                menu.push({ id: "compositejs", name: "CompositeJs", url: "https://compositejs.github.io" });
+        }
+    } catch (ex) {}
     function init (branch) {
         var ele = document.createElement("footer");
         ele.innerHTML = "<section><div class=\"x-copyright\" style=\"color: rgba(255, 255, 255, 0.2); font-size: 36px; \"><strong>12D</strong>Labs<br /></div></section>";

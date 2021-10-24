@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta property="og:image" content="../../images/bg/poster.jpg">
+    <title>TilePuzzle - 12DLabs</title>
+    <link href="css/index.css" rel="css/stylesheet" type="text/css">
+    <script type="text/javascript" src="../../static/scripts/layout.js" ></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <link href="../../css/layout.css" rel="stylesheet" />
+</head>
+<body onload="initAll();">
+    <section style="min-height: 640px; "><section>
+        <table width="300" border="1" align="center" cellpadding="0" cellspacing="0">
+            <tbody><tr>
+                <td><img class="normal" id="1" src="./images/8.png" width="100" height="100" onclick="slide(1);"></td>
+                <td><img class="normal" id="2" src="./images/6.png" width="100" height="100" onclick="slide(2);"></td>
+                <td><img class="normal" id="3" src="./images/5.png" width="100" height="100" onclick="slide(3);"></td>
+            </tr>
+            <tr>
+                <td><img class="normal" id="4" src="./images/7.png" width="100" height="100" onclick="slide(4);"></td>
+                <td><img class="normal" id="5" src="./images/1.png" width="100" height="100" onclick="slide(5);"></td>
+                <td><img class="normal" id="6" src="./images/2.png" width="100" height="100" onclick="slide(6);"></td>
+            </tr>
+            <tr>
+                <td><img class="normal" id="7" src="./images/3.png" width="100" height="100" onclick="slide(7);"></td>
+                <td><img class="normal" id="8" src="./images/0.png" width="100" height="100" onclick="slide(8);"></td>
+                <td><img class="normal" id="9" src="./images/4.png" width="100" height="100" onclick="slide(9);"></td>
+            </tr></tbody>
+        </table></section>
+        <section style="text-align: center;"><div id="reset">
+            <button onclick="reload()">重置</button>
+        </div><div id="101"><h3>Number of moves (移动次数): 0</h3></div></section>
+    </section>
+    <script type="text/javascript">
+        pgCtrl.init("games");
+    </script>
+</body>
+</html>
