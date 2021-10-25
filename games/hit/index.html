@@ -104,6 +104,9 @@
         #ali_app_labs_demo_hit_code > div > code .ali-x-code-function {
             color: #dcdcaa;
         }
+        #ali_app_labs_demo_hit_code > div > code .ali-x-code-mark {
+            color: #808080;
+        }
     </style>
 </head>
 <body class="ali-page-l-show ali-app-labs">
@@ -115,7 +118,18 @@
             </div>
             <div id="ali_app_labs_demo_hit_code">
                 <p>
-                    <span>Do you want to add this to your site? You can import Quark and insert following JavaScript code.</span>
+                    <span>Do you want to add this to your site? You can import <code>Quark</code> in your page firstly as following (or by CommonJs).</span>
+                </p>
+                <div>
+                    <code>
+                        <span class="ali-x-code-mark">&lt;</span><span class="ali-x-code-keyword">script</span>
+                        <span class="ali-x-code-property">type</span>=<span class="ali-x-code-string">&quot;text/javascript&quot;</span>
+                        <span class="ali-x-code-property">src</span>=<span class="ali-x-code-string">&quot;<span style="user-select: all; ">https://g.alicdn.com/hub/quark/1.9.1024/scripts/index.min.js</span>&quot;</span>
+                        <span class="ali-x-code-mark">/&gt;</span>
+                    </code>
+                </div>
+                <p>
+                    <span>And then insert following JavaScript code.</span>
                 </p>
                 <div>
                     <code>
@@ -166,6 +180,14 @@
                         });
                     </code>
                 </div>
+                <p>
+                    <strong>Note:</strong>
+                    <span>You can also import <code>DataSense</code> library to enable the similar features instead of <code>Quark</code>.</span>
+                    <span>See <a href="https://github.com/compositejs/datasense/blob/main/docs/task.md">HitTask</a> for details.</span>
+                </p>
+                <p>
+                    <span>&nbsp;</span>
+                </p>
             </div>
         </section>
     </section>
