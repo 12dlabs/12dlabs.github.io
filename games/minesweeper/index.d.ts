@@ -19,11 +19,7 @@ interface OptionsContract {
   * The minesweeper instance.
   */
 declare class Minesweeper {
-    private _mines;
-    private _options;
-    private _opened;
-    private _element;
-    private _end;
+    private _cache;
     /**
       * Initializes a new instance of the Minesweeper class.
       * @param id  The identifier of the element container to fill.
@@ -50,10 +46,11 @@ declare class Minesweeper {
       * @param column  The column index.
       */
     open(row: number, column: number): boolean;
-    private _cell(row, column);
-    private _fail();
-    private _success();
-    private _openRound(row, column);
+    private _cell;
+    private _fail;
+    private _success;
+    private _costing;
+    private _openRound;
 }
 /**
   * Generates an array of random number by given scope.

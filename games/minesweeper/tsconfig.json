@@ -1,0 +1,16 @@
+{
+    "compilerOptions": {
+        "outFile": "./index.js",
+        "noImplicitAny": true,
+        "target": "es5",
+        "declaration": true,
+        "sourceMap": true,
+        "lib": [
+            "es2015",
+            "dom"
+        ]
+    },
+    "include": [
+        "index.ts"
+    ]
+}

@@ -1,4 +1,4 @@
-﻿/*  --------------------
+/*  --------------------
  *  Minesweeper - Alibaba
  *  (c) Kingcean Tuan, 2015.
  *
@@ -32,26 +32,29 @@ interface OptionsContract {
   * The minesweeper instance.
   */
 class Minesweeper {
-    private _mines: number[];
-    private _options: OptionsContract;
-    private _opened: number[];
-    private _element: HTMLElement;
-    private _end = false;
+    private _cache: {
+        mines?: number[];
+        options?: OptionsContract;
+        opened?: number[];
+        element?: HTMLElement;
+        end: boolean;
+        start?: Date;
+    } = { end: false };
 
     /**
       * Initializes a new instance of the Minesweeper class.
       * @param id  The identifier of the element container to fill.
       */
     public constructor(id: string | HTMLElement) {
-        this._element = typeof id === "string" ? document.getElementById(id) : id;
-        this._element.className = "ali-toys-minesweeper"
+        this._cache.element = typeof id === "string" ? document.getElementById(id) : id;
+        this._cache.element.className = "ali-toys-minesweeper"
     }
 
     /**
       * Gets all mines by an index array.
       */
     public mines() {
-        return this._mines;
+        return this._cache.mines;
     };
 
     /**
@@ -59,24 +62,25 @@ class Minesweeper {
       * @param options  The options.
       */
     public start(options: OptionsContract) {
-        this._options = options;
-        this._element.innerHTML = "";
-        var table = document.createElement("table");
-        var tBody = document.createElement("tbody");
+        this._cache.options = options;
+        this._cache.element.innerHTML = "";
+        let table = document.createElement("table");
+        let tBody = document.createElement("tbody");
         table.appendChild(tBody);
-        this._mines = randomNumbers(options.x * options.y, options.count);
-        this._opened = [];
-        this._end = false;
-        for (var row = 0; row < options.x; row++) {
-            var tRow = document.createElement("tr");
+        this._cache.mines = randomNumbers(options.x * options.y, options.count);
+        this._cache.opened = [];
+        this._cache.end = false;
+        this._cache.start = null;
+        for (let row = 0; row < options.y; row++) {
+            let tRow = document.createElement("tr");
             tBody.appendChild(tRow);
-            for (var column = 0; column < options.y; column++) {
-                var tCell = this._cell(row, column);
+            for (let column = 0; column < options.x; column++) {
+                let tCell = this._cell(row, column);
                 tRow.appendChild(tCell);
             }
         }
 
-        this._element.appendChild(table);
+        this._cache.element.appendChild(table);
     }
 
     /**
@@ -85,9 +89,9 @@ class Minesweeper {
       * @param column  The column index.
       */
     public isMine(row: number, column: number): boolean {
-        if (row < 0 || column < 0 || row >= this._options.x || column >= this._options.y) return null;
-        return this._mines.some((value, index, array) => {
-            return value === row * this._options.y + column;
+        if (row < 0 || column < 0 || row >= this._cache.options.x || column >= this._cache.options.y) return null;
+        return this._cache.mines.some((value, index, array) => {
+            return value === row * this._cache.options.y + column;
         });
     }
 
@@ -97,26 +101,33 @@ class Minesweeper {
       * @param column  The column index.
       */
     public open(row: number, column: number): boolean {
-        if (this._end || row < 0 || column < 0 || row >= this._options.x || column >= this._options.y) return null;
-        var tCell = document.getElementById(this._element.id + "_table_b_r" + row.toString() + "_c" + column.toString());
-        tCell.className = "ali-state-active-t";
-        if (this._opened.some((value, index, array) => {
-            return value === row * this._options.y + column;
+        if (this._cache.end || row < 0 || column < 0 || row >= this._cache.options.x || column >= this._cache.options.y) return null;
+        let tCell = document.getElementById(this._cache.element.id + "_table_b_r" + row.toString() + "_c" + column.toString());
+        let isFirst = !this._cache.start;
+        if (isFirst) this._cache.start = new Date();
+        if (!tCell.className || !tCell.className.startsWith("ali-state-active-t ")) tCell.className = "ali-state-active-t";
+        if (this._cache.opened.some((value, index, array) => {
+            return value === row * this._cache.options.y + column;
         })) return this.isMine(row, column);
-        this._opened.push(row * this._options.y + column);
+        this._cache.opened.push(row * this._cache.options.y + column);
         if (this.isMine(row, column)) {
+            if (isFirst && new Date().getTime() - this._cache.start.getTime() < 1000) {
+                this.start(this._cache.options);
+                return this.open(row, column);
+            }
+
             tCell.innerHTML = "X";
             this._fail();
             return false;
         }
 
-        var rows = [row];
+        let rows = [row];
         if (row > 0) rows.push(row - 1);
-        if (row < this._options.x) rows.push(row + 1);
-        var columns = [column];
+        if (row < this._cache.options.x) rows.push(row + 1);
+        let columns = [column];
         if (column > 0) columns.push(column - 1);
-        if (column < this._options.y) columns.push(column + 1);
-        var num = (this.isMine(row - 1, column - 1) ? 1 : 0)
+        if (column < this._cache.options.y) columns.push(column + 1);
+        let num = (this.isMine(row - 1, column - 1) ? 1 : 0)
             + (this.isMine(row - 1, column) ? 1 : 0)
             + (this.isMine(row - 1, column + 1) ? 1 : 0)
             + (this.isMine(row, column - 1) ? 1 : 0)
@@ -124,8 +135,12 @@ class Minesweeper {
             + (this.isMine(row + 1, column - 1) ? 1 : 0)
             + (this.isMine(row + 1, column) ? 1 : 0)
             + (this.isMine(row + 1, column + 1) ? 1 : 0);
-        if (num > 0) tCell.innerHTML = num.toString();
-        if (this._opened.length >= this._options.x * this._options.y - this._options.count) this._success();
+        if (num > 0) {
+          tCell.innerHTML = num.toString();
+          tCell.className += " ali-x-num-" + (num > 6 ? 6 : num).toString();
+        }
+
+        if (this._cache.opened.length >= this._cache.options.x * this._cache.options.y - this._cache.options.count) this._success();
         if (num === 0) {
             this._openRound(row, column);
         }
@@ -134,8 +149,8 @@ class Minesweeper {
     }
 
     private _cell(row: number, column: number) {
-        var tCell = document.createElement("td");
-        tCell.id = this._element.id + "_table_b_r" + row.toString() + "_c" + column.toString();
+        let tCell = document.createElement("td");
+        tCell.id = this._cache.element.id + "_table_b_r" + row.toString() + "_c" + column.toString();
         tCell.innerHTML = "&nbsp;";
         tCell.addEventListener("click", (ev) => {
             this.open(row, column);
@@ -144,20 +159,41 @@ class Minesweeper {
     }
 
     private _fail() {
-        this._end = true;
-        this._mines.forEach((value, index, array) => {
-            var total = this._options.x * this._options.y;
-            var column = value % this._options.y;
-            var row = (value - column) / this._options.y;
-            var tCell = document.getElementById(this._element.id + "_table_b_r" + row.toString() + "_c" + column.toString());
-            if (!!tCell) tCell.innerHTML = "X";
+        this._cache.end = true;
+        let costing = this._costing();
+        this._cache.start = undefined;
+        this._cache.mines.forEach((value, index, array) => {
+            let total = this._cache.options.x * this._cache.options.y;
+            let column = value % this._cache.options.y;
+            let row = (value - column) / this._cache.options.y;
+            let tCell = document.getElementById(this._cache.element.id + "_table_b_r" + row.toString() + "_c" + column.toString());
+            if (!!tCell) {
+              tCell.innerHTML = "X";
+              tCell.className = tCell.className === "ali-state-active-t" ? "ali-state-active-t ali-x-num-err" : "ali-x-num-err";
+            }
         });
-        alert("Game over. Better luck next time!");
+        alert("Game over. Better luck next time!\nCosting " + costing + ".");
     }
 
     private _success() {
-        this._end = true;
-        alert("Congratulations!");
+        this._cache.end = true;
+        let costing = this._costing();
+        this._cache.start = undefined;
+        alert("Congratulations!\nCosting " + costing + ".");
+    }
+
+    private _costing() {
+        if (!this._cache.start) return "unknown";
+        let sec = Math.floor((new Date().getTime() - this._cache.start.getTime()) / 1000);
+        if (sec < 10) return "0:0" + sec;
+        if (sec < 60) return "0:" + sec;
+        var min = Math.floor(sec / 60);
+        sec = sec % 60;
+        if (min < 60) return min + ":" + (sec < 10 ? "0" : "") + sec;
+        var h = Math.floor(min / 60);
+        if (h > 100) return "too many days";
+        min = min % 60;
+        return h + ":" + (min < 10 ? "0" : "") + min + ":" + (sec < 10 ? "0" : "") + sec;;
     }
 
     private _openRound(row: number, column: number) {
@@ -170,7 +206,6 @@ class Minesweeper {
         this.open(row + 1, column);
         this.open(row + 1, column + 1);
     }
-
 }
 
 /**
@@ -179,10 +214,10 @@ class Minesweeper {
   * @param count  The count of random numbers.
   */
 function randomNumbers(total: number, count: number): number[] {
-    var mines = [];
-    var mineStart = 0;
-    for (var i = 0; i < count; i++) {
-        var random = Math.random() * (total - count - mineStart + i) / Math.sqrt(Math.sqrt(total));
+    let mines: number[] = [];
+    let mineStart = 0;
+    for (let i = 0; i < count; i++) {
+        let random = Math.random() * (total - count - mineStart + i) / Math.sqrt(Math.sqrt(total));
         if (random < 1) random = 1;
         mineStart = parseInt(random.toFixed()) + mineStart;
         mines.push(mineStart);

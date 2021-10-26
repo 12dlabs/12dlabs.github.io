@@ -43,6 +43,27 @@ a {
   transition: background-color 0.4s;
   cursor: default;
 }
+.ali-toys-minesweeper > table > tbody > tr > td.ali-state-active-t.ali-x-num-1 {
+  color: #6CF;
+}
+.ali-toys-minesweeper > table > tbody > tr > td.ali-state-active-t.ali-x-num-2 {
+  color: #6FC;
+}
+.ali-toys-minesweeper > table > tbody > tr > td.ali-state-active-t.ali-x-num-3 {
+  color: #FA6;
+}
+.ali-toys-minesweeper > table > tbody > tr > td.ali-state-active-t.ali-x-num-4 {
+  color: #F6C;
+}
+.ali-toys-minesweeper > table > tbody > tr > td.ali-state-active-t.ali-x-num-5 {
+  color: #F66;
+}
+.ali-toys-minesweeper > table > tbody > tr > td.ali-state-active-t.ali-x-num-6 {
+  color: #F33;
+}
+.ali-toys-minesweeper > table > tbody > tr > td.ali-state-active-t.ali-x-num-err {
+  color: #F00;
+}
 .ali-container-actions {
   padding: 2px;
   -moz-user-select: none;
