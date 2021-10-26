@@ -57,10 +57,10 @@ var Minesweeper = /** @class */ (function () {
       */
     Minesweeper.prototype.isMine = function (row, column) {
         var _this = this;
-        if (row < 0 || column < 0 || row >= this._cache.options.x || column >= this._cache.options.y)
+        if (row < 0 || column < 0 || row >= this._cache.options.y || column >= this._cache.options.x)
             return null;
         return this._cache.mines.some(function (value, index, array) {
-            return value === row * _this._cache.options.y + column;
+            return value === row * _this._cache.options.x + column;
         });
     };
     /**
@@ -70,7 +70,7 @@ var Minesweeper = /** @class */ (function () {
       */
     Minesweeper.prototype.open = function (row, column) {
         var _this = this;
-        if (this._cache.end || row < 0 || column < 0 || row >= this._cache.options.x || column >= this._cache.options.y)
+        if (this._cache.end || row < 0 || column < 0 || row >= this._cache.options.y || column >= this._cache.options.x)
             return null;
         var tCell = document.getElementById(this._cache.element.id + "_table_b_r" + row.toString() + "_c" + column.toString());
         var isFirst = !this._cache.start;
@@ -79,10 +79,10 @@ var Minesweeper = /** @class */ (function () {
         if (!tCell.className || !tCell.className.startsWith("ali-state-active-t "))
             tCell.className = "ali-state-active-t";
         if (this._cache.opened.some(function (value, index, array) {
-            return value === row * _this._cache.options.y + column;
+            return value === row * _this._cache.options.x + column;
         }))
             return this.isMine(row, column);
-        this._cache.opened.push(row * this._cache.options.y + column);
+        this._cache.opened.push(row * this._cache.options.x + column);
         if (this.isMine(row, column)) {
             if (isFirst && new Date().getTime() - this._cache.start.getTime() < 1000) {
                 this.start(this._cache.options);
@@ -95,12 +95,12 @@ var Minesweeper = /** @class */ (function () {
         var rows = [row];
         if (row > 0)
             rows.push(row - 1);
-        if (row < this._cache.options.x)
+        if (row < this._cache.options.y)
             rows.push(row + 1);
         var columns = [column];
         if (column > 0)
             columns.push(column - 1);
-        if (column < this._cache.options.y)
+        if (column < this._cache.options.x)
             columns.push(column + 1);
         var num = (this.isMine(row - 1, column - 1) ? 1 : 0)
             + (this.isMine(row - 1, column) ? 1 : 0)
@@ -137,9 +137,8 @@ var Minesweeper = /** @class */ (function () {
         var costing = this._costing();
         this._cache.start = undefined;
         this._cache.mines.forEach(function (value, index, array) {
-            var total = _this._cache.options.x * _this._cache.options.y;
-            var column = value % _this._cache.options.y;
-            var row = (value - column) / _this._cache.options.y;
+            var column = value % _this._cache.options.x;
+            var row = Math.floor(value / _this._cache.options.x);
             var tCell = document.getElementById(_this._cache.element.id + "_table_b_r" + row.toString() + "_c" + column.toString());
             if (!!tCell) {
                 tCell.innerHTML = "X";

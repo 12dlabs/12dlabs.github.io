@@ -16,7 +16,7 @@
         <section id="demo_container_action" class="ali-container-actions">
             <span id="demo_container_action_new" class="ali-button-action">New Game</span>
         </section>
-        <section id="demo_container_minesweeper"></section>
+        <section id="demo_container_minesweeper" style="overflow-x: overlay; "></section>
         <section style="color: #666; margin-top: 80px; ">
             <code>&lt;<a href="https://github.com/12dlabs/12dlabs.github.io/blob/44ab8c1e347ee378da9902281c94dd8cbc2f794c/games/minesweeper/index.ts">source-code</a>/&gt;</code>
         </section>
@@ -24,16 +24,21 @@
     <script type="text/javascript">
     (function () {
         var minesweeper = new Minesweeper("demo_container_minesweeper");
-        var newGame = function () {
-            minesweeper.start({
-                count: 10,
-                x: 9,
-                y: 9
-            });
+        var options = {
+            count: 10,
+            x: 9,
+            y: 9
         };
-        newGame();
+        minesweeper.start(options);
+        var newGameTime = new Date();
         document.getElementById("demo_container_action_new").onclick = function (ev) {
-            newGame();
+            if (new Date().getTime() - newGameTime < 300) {
+                var easy = options.x === 9;
+                options.x = easy ? 19 : 9;
+                options.count = easy ? 30 : 10;
+            }
+            newGameTime = new Date();
+            minesweeper.start(options);
         };
     })();
     pgCtrl.init("games");

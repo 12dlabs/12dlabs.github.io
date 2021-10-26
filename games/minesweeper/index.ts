@@ -89,9 +89,9 @@ class Minesweeper {
       * @param column  The column index.
       */
     public isMine(row: number, column: number): boolean {
-        if (row < 0 || column < 0 || row >= this._cache.options.x || column >= this._cache.options.y) return null;
+        if (row < 0 || column < 0 || row >= this._cache.options.y || column >= this._cache.options.x) return null;
         return this._cache.mines.some((value, index, array) => {
-            return value === row * this._cache.options.y + column;
+            return value === row * this._cache.options.x + column;
         });
     }
 
@@ -101,15 +101,15 @@ class Minesweeper {
       * @param column  The column index.
       */
     public open(row: number, column: number): boolean {
-        if (this._cache.end || row < 0 || column < 0 || row >= this._cache.options.x || column >= this._cache.options.y) return null;
+        if (this._cache.end || row < 0 || column < 0 || row >= this._cache.options.y || column >= this._cache.options.x) return null;
         let tCell = document.getElementById(this._cache.element.id + "_table_b_r" + row.toString() + "_c" + column.toString());
         let isFirst = !this._cache.start;
         if (isFirst) this._cache.start = new Date();
         if (!tCell.className || !tCell.className.startsWith("ali-state-active-t ")) tCell.className = "ali-state-active-t";
         if (this._cache.opened.some((value, index, array) => {
-            return value === row * this._cache.options.y + column;
+            return value === row * this._cache.options.x + column;
         })) return this.isMine(row, column);
-        this._cache.opened.push(row * this._cache.options.y + column);
+        this._cache.opened.push(row * this._cache.options.x + column);
         if (this.isMine(row, column)) {
             if (isFirst && new Date().getTime() - this._cache.start.getTime() < 1000) {
                 this.start(this._cache.options);
@@ -123,10 +123,10 @@ class Minesweeper {
 
         let rows = [row];
         if (row > 0) rows.push(row - 1);
-        if (row < this._cache.options.x) rows.push(row + 1);
+        if (row < this._cache.options.y) rows.push(row + 1);
         let columns = [column];
         if (column > 0) columns.push(column - 1);
-        if (column < this._cache.options.y) columns.push(column + 1);
+        if (column < this._cache.options.x) columns.push(column + 1);
         let num = (this.isMine(row - 1, column - 1) ? 1 : 0)
             + (this.isMine(row - 1, column) ? 1 : 0)
             + (this.isMine(row - 1, column + 1) ? 1 : 0)
@@ -163,13 +163,12 @@ class Minesweeper {
         let costing = this._costing();
         this._cache.start = undefined;
         this._cache.mines.forEach((value, index, array) => {
-            let total = this._cache.options.x * this._cache.options.y;
-            let column = value % this._cache.options.y;
-            let row = (value - column) / this._cache.options.y;
+            let column = value % this._cache.options.x;
+            let row = Math.floor(value / this._cache.options.x);
             let tCell = document.getElementById(this._cache.element.id + "_table_b_r" + row.toString() + "_c" + column.toString());
             if (!!tCell) {
-              tCell.innerHTML = "X";
-              tCell.className = tCell.className === "ali-state-active-t" ? "ali-state-active-t ali-x-num-err" : "ali-x-num-err";
+                tCell.innerHTML = "X";
+                tCell.className = tCell.className === "ali-state-active-t" ? "ali-state-active-t ali-x-num-err" : "ali-x-num-err";
             }
         });
         alert("Game over. Better luck next time!\nCosting " + costing + ".");
