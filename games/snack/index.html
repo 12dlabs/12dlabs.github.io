@@ -16,31 +16,13 @@
     background: #333;
     border-radius: 4px;
   }
-  section.game > button {
-    color: #DDD;
-    background-color: #333;
-    text-decoration: none;
-    vertical-align: middle;
-    display: inline-block;
-    padding: 7px 15px 7px;
-    margin: 10px;
-    border: 1px solid #444;
-    border-radius: 6px;
-    position: relative;
-    cursor: pointer;
-  }
-  section.game > button:hover {
-    color: #EEE;
-    background-color: #345;
-    border-color: #456;
-  }
   </style>
 </head>
 <body>
-  <section style="min-height: 640px; ">
-    <h2 class="game">经典贪吃蛇游戏 <span style="font-size: 16px; ">for PC</span></h2>
+  <section style="min-height: 640px; user-select: none;">
+    <h2 class="game">Snake Game | 经典贪吃蛇游戏</h2>
     <section id="game-start" class="game" style="height: 60px; margin-bottom: 0; ">
-      <button onclick="startGame()" >Start New Game</button>
+      <button class="link-button-normal" onclick="startGame()" >Start New Game | 开始游戏</button>
     </section>
     <section id="score-container" class="game" style="font-size: 24px; height: 60px; margin-bottom: 0; display: none; ">
       <span>Score:
@@ -50,8 +32,8 @@
       <canvas id="can" width="400" height="400"></canvas>
     </section>
     <section class="game">
-      <button onclick="if (speed - 50 > 0) speed -= 50" >加速</button>
-      <button onclick="speed += 50">减速</button>
+      <button class="link-button-normal" onclick="if (speed - 50 > 0) speed -= 50" >Speed up | 加速</button>
+      <button class="link-button-normal" onclick="speed += 50">Speed Down | 减速</button>
     </section>
   </section>
 <script type="text/javascript">
