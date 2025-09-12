@@ -4,6 +4,12 @@ window.pgCtrl = (function () {
         { id: "games", name: "Games", url: "https://12dlabs.github.io/games" },
         { id: "about", name: "About", url: "https://12dlabs.github.io/about" }
     ];
+    if (typeof site !== "undefined" && typeof site.getString === "function") {
+        menu[0].name = site.getString("blogs");
+        menu[1].name = site.getString("games");
+        menu[2].name = site.getString("about");
+    }
+
     var menuEle;
     try {
         var q = window.location.search;

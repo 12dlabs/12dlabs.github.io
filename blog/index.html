@@ -5,26 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta property="og:image" content="../images/bg/poster.jpg">
     <title>Blogs - 12D Labs</title>
-    <script type="text/javascript" src="../static/scripts/layout.js" ></script>
     <link href="https://cdn.jsdelivr.net/npm/hje@2.0.0/docs/css/site.org.css" rel="stylesheet" />
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/hje@2.0.0/docs/js/site.js" ></script>
+    <script type="text/javascript" src="../static/scripts/layout.js" ></script>
     <script type="text/javascript">
-    function showMoreProjects() {
-        ["project-item-chemistry", "project-item-quark", "project-item-apass", "project-item-nine", "project-item-sop", "project-item-iqiyi"].forEach(function (ele, i) {
-            document.getElementById(ele).style.display = "";
-        });
-        document.getElementById("project-more").style.display = "none";
-    }
     </script>
 </head>
 <body>
     <section style="min-height: 640px; margin-bottom: 60px; ">
         <section>
-            <a id="project-item-quark" class="link-long-button" href="https://12dlabs-github-io.vercel.app" style="font-size: 20px; " ><span>Blogs</span>
+            <a id="project-item-quark" class="link-long-button" href="https://12dlabs-github-io.vercel.app" style="font-size: 20px; " ><span id="link-blogs">Blogs</span>
+            </a><a id="project-item-quark" class="link-long-button" href="https://littuomuxin.github.io/sth/" style="font-size: 20px; " ><span><code>sth</code></span>
             </a>
         </section>
     </section>
     <script type="text/javascript">
     pgCtrl.init("blogs");
+    site.getString("blogs", "link-blogs");
     </script>
 </body>
 </html>
