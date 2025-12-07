@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta property="og:image" content="images/bg/poster.jpg">
     <title>12D Labs</title>
-    <link href="https://cdn.jsdelivr.net/npm/hje@2.2.0/docs/css/site.org.css" rel="stylesheet" />
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/hje@2.2.0/docs/js/site.js" ></script>
+    <link href="https://cdn.jsdelivr.net/npm/hje@2.3.1/docs/css/site.org.css" rel="stylesheet" />
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/hje@2.3.1/docs/js/mdblogs.js" ></script>
     <script type="text/javascript" src="./static/scripts/layout.js" ></script>
 </head>
 <body>
@@ -32,9 +32,9 @@
     </section>
     <script type="text/javascript">
     pgCtrl.init();
-    site.getString("projects", "title-projects");
-    site.getString("archiveProjects", "title-archive");
-    site.getString("otherLinks", "title-links");
+    DeepX.MdBlogs.setElementText("title-projects", "projects");
+    DeepX.MdBlogs.setElementText("title-archive", "archiveProjects");
+    DeepX.MdBlogs.setElementText("title-links", "otherLinks");
     </script>
 </body>
 </html>

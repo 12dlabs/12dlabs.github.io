@@ -4,10 +4,10 @@ window.pgCtrl = (function () {
         { id: "games", name: "Games", url: "https://12dlabs.github.io/games" },
         { id: "about", name: "About", url: "https://12dlabs.github.io/about" }
     ];
-    if (typeof site !== "undefined" && typeof site.getString === "function") {
-        menu[0].name = site.getString("blogs");
-        menu[1].name = site.getString("games");
-        menu[2].name = site.getString("about");
+    if (typeof DeepX !== "undefined" && typeof DeepX.MdBlogs.getLocaleString === "function") {
+        menu[0].name = DeepX.MdBlogs.getLocaleString("blogs");
+        menu[1].name = DeepX.MdBlogs.getLocaleString("games");
+        menu[2].name = DeepX.MdBlogs.getLocaleString("about");
     }
 
     var menuEle;
