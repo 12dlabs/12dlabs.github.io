@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta property="og:image" content="../images/bg/poster.jpg">
     <title>Games - 12D Labs</title>
-    <link href="https://cdn.jsdelivr.net/npm/hje@2.2.0/docs/css/site.org.css" rel="stylesheet" />
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/hje@2.2.0/docs/js/site.js" ></script>
+    <link href="https://cdn.jsdelivr.net/npm/hje@2.3.2/docs/css/site.org.css" rel="stylesheet" />
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/hje@2.3.2/docs/js/mdblogs.js" ></script>
     <script type="text/javascript" src="../static/scripts/layout.js" ></script>
 </head>
 <body>
     <section style="min-height: 640px; margin-bottom: 60px; ">
-        <h2>Little Games</h2>
+        <h2 id="title-games">Little Games</h2>
         <section class="link-tile-wide">
             <a href="minesweeper" ><img alt="Minesweeper" src="../images/thumbs/logo_minesweeper.png" /><span>Minesweeper</span>
             </a><a href="https://littuomuxin.github.io/gobang/?12dlabs"><span>Gobang</span>
@@ -27,6 +27,11 @@
     </section>
     <script type="text/javascript">
     pgCtrl.init("games");
+    (function () {
+        const zh = DeepX.MdBlogs.getLocaleString("name") === "名称";
+        if (!zh) return;
+        document.getElementById("title-games").innerHTML = "小游戏";
+    })();
     </script>
 </body>
 </html>
