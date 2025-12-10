@@ -18,7 +18,7 @@
     <section style="min-height: 640px; margin-bottom: 60px; ">
         <h2 id="title-games">Little Games</h2>
         <section class="link-tile-wide">
-            <a href="minesweeper" ><img alt="Minesweeper" src="../images/thumbs/icon_minesweeper.webp" /><span>Minesweeper</span>
+            <a href="minesweeper" ><img alt="Minesweeper" src="../images/thumbs/icon_minesweeper.webp" /><span id="game-name-minesweeper">Minesweeper</span>
             </a><a href="https://littuomuxin.github.io/gobang/?12dlabs"><img alt="Gobang" src="../images/thumbs/icon_gobang.webp" /><span id="game-name-gobang">Gobang</span>
             </a><a href="hit" ><img alt="Critical Hit" src="../images/thumbs/icon_hit.webp" /><span id="game-name-hit">Critical Hit</span>
             </a><a href="cube" ><img alt="Rubik Cube" src="../images/thumbs/icon_rubikscube.webp" /><span id="game-name-rubikscube">Rubik&#39;s Cube</span>
@@ -36,6 +36,7 @@
         const zh = DeepX.MdBlogs.getLocaleString("name") === "名称";
         if (!zh) return;
         DeepX.MdBlogs.setElementProp("title-games", null, "小游戏");
+        DeepX.MdBlogs.setElementProp("game-name-minesweeper", null, "扫雷");
         DeepX.MdBlogs.setElementProp("game-name-gobang", null, "五子棋");
         DeepX.MdBlogs.setElementProp("game-name-hit", null, "暴击事件");
         DeepX.MdBlogs.setElementProp("game-name-rubikscube", null, "魔方");
