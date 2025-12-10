@@ -8,20 +8,25 @@
     <link href="https://cdn.jsdelivr.net/npm/hje@2.3.2/docs/css/site.org.css" rel="stylesheet" />
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/hje@2.3.2/docs/js/mdblogs.js" ></script>
     <script type="text/javascript" src="../static/scripts/layout.js" ></script>
+    <style type="text/css">
+    section.link-tile-wide > a > img:first-child {
+        width: 48px; height: 48px; margin: -24px 10px -24px -10px; border: 1px solid #333; border-radius: 4px;
+    }
+    </style>
 </head>
 <body>
     <section style="min-height: 640px; margin-bottom: 60px; ">
         <h2 id="title-games">Little Games</h2>
         <section class="link-tile-wide">
             <a href="minesweeper" ><img alt="Minesweeper" src="../images/thumbs/icon_minesweeper.webp" /><span>Minesweeper</span>
-            </a><a href="https://littuomuxin.github.io/gobang/?12dlabs"><img alt="Gobang" src="../images/thumbs/icon_gobang.webp" /><span>Gobang</span>
-            </a><a href="hit" ><img alt="Critical Hit" src="../images/thumbs/icon_hit.webp" /><span>Critical Hit</span>
-            </a><a href="cube" ><img alt="Rubik Cube" src="../images/thumbs/icon_rubikscube.webp" /><span>Rubik&#39;s Cube</span>
-            </a><a href="tilepuzzle" ><img alt="Tile Puzzle" src="../images/thumbs/icon_tilepuzzle.webp" /><span>Tile Puzzle</span>
-            </a><a href="stickman" ><img alt="Stickman" src="../images/thumbs/icon_stickman.webp" /><span>Stickman</span>
-            </a><a href="cosmos-killer" style="display: none; " ><img alt="Cosmos Killer" src="../images/thumbs/icon_cosmoskiller.webp" /><span>Cosmos Killer</span>
-            </a><a href="piano" ><img alt="Stickman" src="../images/thumbs/icon_piano.webp" /><span>Piano</span>
-            </a><a href="snack" ><img alt="Snake" src="../images/thumbs/icon_snake.webp" /><span>Snake</span>
+            </a><a href="https://littuomuxin.github.io/gobang/?12dlabs"><img alt="Gobang" src="../images/thumbs/icon_gobang.webp" /><span id="game-name-gobang">Gobang</span>
+            </a><a href="hit" ><img alt="Critical Hit" src="../images/thumbs/icon_hit.webp" /><span id="game-name-hit">Critical Hit</span>
+            </a><a href="cube" ><img alt="Rubik Cube" src="../images/thumbs/icon_rubikscube.webp" /><span id="game-name-rubikscube">Rubik&#39;s Cube</span>
+            </a><a href="tilepuzzle" ><img alt="Tile Puzzle" src="../images/thumbs/icon_tilepuzzle.webp" /><span id="game-name-tilepuzzle">Tile Puzzle</span>
+            </a><a href="stickman" ><img alt="Stickman" src="../images/thumbs/icon_stickman.webp" /><span id="game-name-stickman">Stickman</span>
+            </a><a href="cosmos-killer" style="display: none; " ><img alt="Cosmos Killer" src="../images/thumbs/icon_cosmoskiller.webp" /><span id="game-name-cosmoskiller">Cosmos Killer</span>
+            </a><a href="piano" ><img alt="Stickman" src="../images/thumbs/icon_piano.webp" /><span id="game-name-piano">Piano</span>
+            </a><a href="snack" ><img alt="Snake" src="../images/thumbs/icon_snake.webp" /><span id="game-name-snake">Snake</span>
             </a>
         </section>
     </section>
@@ -30,7 +35,12 @@
     (function () {
         const zh = DeepX.MdBlogs.getLocaleString("name") === "名称";
         if (!zh) return;
-        document.getElementById("title-games").innerHTML = "小游戏";
+        DeepX.MdBlogs.setElementProp("title-games", null, "小游戏");
+        DeepX.MdBlogs.setElementProp("game-name-gobang", null, "五子棋");
+        DeepX.MdBlogs.setElementProp("game-name-hit", null, "暴击事件");
+        DeepX.MdBlogs.setElementProp("game-name-rubikscube", null, "魔方");
+        DeepX.MdBlogs.setElementProp("game-name-piano", null, "钢琴");
+        DeepX.MdBlogs.setElementProp("game-name-snake", null, "贪吃蛇");
     })();
     </script>
 </body>
