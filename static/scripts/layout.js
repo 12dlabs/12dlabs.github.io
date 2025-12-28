@@ -1,12 +1,17 @@
 window.pgCtrl = (function () {
     var menu = [
         { id: "sth", name: "sth", tag: "code", url: "https://sth.violty.com" },
-        { id: "games", name: "Games", url: "https://12dlabs.github.io/games" },
+        { id: "stories", name: "Stories", url: "https://12dlabs.github.io/stories" },
+        { id: "games", name: "Little Games", url: "https://12dlabs.github.io/games" },
         { id: "about", name: "About", url: "https://12dlabs.github.io/about" }
     ];
     if (typeof DeepX !== "undefined" && typeof DeepX.MdBlogs.getLocaleString === "function") {
-        menu[1].name = DeepX.MdBlogs.getLocaleString("games");
-        menu[2].name = DeepX.MdBlogs.getLocaleString("about");
+        const about = DeepX.MdBlogs.getLocaleString("about");
+        menu[3].name = about;
+        if (about === "关于") {
+            menu[1].name = "故事";
+            menu[2].name = "小游戏";
+        }
     }
 
     var menuEle;
